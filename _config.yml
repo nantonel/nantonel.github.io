@@ -10,7 +10,7 @@ locale                   : "en"
 title                    : "Niccoló Antonello Personal Webpage"
 title_separator          : "-"
 name                     : "Niccoló Antonello"
-description              : "An amazing website."
+description              : "work in progress"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -79,7 +79,7 @@ analytics:
 author:
   name             : "Your Name"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
+  bio              : "..."
   location         : "Somewhere"
   email            :
   uri              :
