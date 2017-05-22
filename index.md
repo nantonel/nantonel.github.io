@@ -3,15 +3,28 @@ layout: single
 author_profile: true
 ---
 
-Niccoló Antonello received his B.Sc. in Electronic Engineering 
-at the [Universitá degli Studi di Padova](http://www.unipd.it/en/) (Italy) 
-and his M.Sc. in [Acoustic Engineering](http://www.dtu.dk/english/Education/msc/Programmes/engineering_acoustics) 
-at the [Technical University of Denmark (DTU)](http://www.dtu.dk/english) 
-in 2010 and 2012, respectively. 
+**Welcome to my personal homepage!**
 
-He is currently pursuing the Ph.D. degree at [KU Leuven](http://www.kuleuven.be/english/) (Belgium) as an 
-Early Stage Researcher in the [Marie Curie Initial Training Network](http://ec.europa.eu/research/mariecurieactions/) 
-["Dereverberation and Reverberation of Audio, Music, and Speech (DREAMS)"](http://www.dreams-itn.eu/). 
+_A little bit about me:_
 
-
-His research interests include room acoustic, sound reproduction, inverse problems and numerical optimization.
+I come from a small town, 
+[Castelfranco Veneto](http://en.wikipedia.org/wiki/Castelfranco_Veneto), in Italy. 
+I studied Electrical Engineering at [Università degli Studi di Padova](www.unipd.it) 
+where I got my BSc in 2010. 
+After that I moved to Denmark 
+where I got my MSc in Acoustic Engineering at the [Technical University of Denmark (DTU)](www.dtu.dk).
+Since May 2013, I'm a PhD student at [KU Leuven](www.kuleuven.be), 
+within the [Marie Curie ITN](http://ec.europa.eu/research/mariecurieactions/) 
+"Dereverberation and Reverberation of Audio, Music and Speech 
+([DREAMS](http://www.dreams-itn.eu/))".
+  
+_My research interests:_ 
+  * room acoustics
+  * numerical optimization.
+  * acoustic inverse problems
+  * (audio) signal processing
+									 
+_Other stuff I like to do:_
+  * Drawing and animation (check [here](/animation/))
+  * Playing instruments 
+  * Programming 
