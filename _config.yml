@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Niccoló Antonello Personal Webpage"
+title                    : 
 title_separator          : "-"
 name                     : "Niccoló Antonello"
-description              : "work in progress"
+description              : 
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -77,10 +77,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "..."
-  location         : "Somewhere"
+  name             : "Niccoló Antonello"
+  avatar           : "/assets/images/yo2.png"
+  bio              : 
+  location         : "KU Leuven (Belgium)"
   email            :
   uri              :
   bitbucket        :
@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "https://github.com/nantonel"
   google_plus      :
   keybase          :
   instagram        :
@@ -171,10 +171,10 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
+#permalink: /
 paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+paginate_path: blog/page:num/
+timezone: Europe/Brussels
 
 
 # Plugins
@@ -204,12 +204,14 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path/my-awesome-category/index.html ~> path: /
+
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
+
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
