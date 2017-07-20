@@ -1,0 +1,633 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2015 Jan Küster
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+%============================================================================%
+%
+%	DOCUMENT DEFINITION
+%
+%============================================================================%
+
+%we use article class because we want to fully customize the page and dont use a cv template
+\documentclass[10pt,A4]{article}	
+
+
+%----------------------------------------------------------------------------------------
+%	ENCODING
+%----------------------------------------------------------------------------------------
+
+%we use utf8 since we want to build from any machine
+\usepackage[utf8]{inputenc}		
+
+%----------------------------------------------------------------------------------------
+%	LOGIC
+%----------------------------------------------------------------------------------------
+
+% provides \isempty test
+\usepackage{xifthen}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% some tex-live fonts - choose your own
+
+%\usepackage[defaultsans]{droidsans}
+%\usepackage[default]{comfortaa}
+%\usepackage{cmbright}
+\usepackage[default]{raleway}
+%\usepackage{fetamont}
+%\usepackage[default]{gillius}
+%\usepackage[light,math]{iwona}
+%\usepackage[thin]{roboto} 
+
+% set font default
+\renewcommand*\familydefault{\sfdefault} 	
+\usepackage[T1]{fontenc}
+
+% more font size definitions
+\usepackage{moresize}		
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE LAYOUT  DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+%debug page outer frames
+%\usepackage{showframe}			
+
+
+%define page styles using geometry
+\usepackage[a4paper]{geometry}		
+
+% for example, change the margins to 2 inches all round
+\geometry{top=1.75cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+
+%use customized header
+\usepackage{fancyhdr}				
+\pagestyle{fancy}
+
+%less space between header and content
+\setlength{\headheight}{-5pt}
+
+
+\usepackage{hyperref}
+		
+
+
+%customize entries left, center and right
+%\lhead{}
+\lhead{ \hspace{0.2cm}\small{Niccol\`o Antonello  $\cdot$ Acoustic and Audio DSP Engineer $\cdot$  \textcolor{sectcol}{\textbf{niccolo.antonello@gmail.com}}  $\cdot$ webpage: \href{https://nantonel.github.io/}{nantonel.github.io}   }}
+%\rhead{}
+
+
+%indentation is zero
+\setlength{\parindent}{0mm}
+
+%----------------------------------------------------------------------------------------
+%	TABLE /ARRAY DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for layouting tables
+\usepackage{multicol}			
+\usepackage{multirow}
+
+%extended aligning of tabular cells
+\usepackage{array}
+
+\newcolumntype{x}[1]{%
+>{\raggedleft\hspace{0pt}}p{#1}}%
+
+
+%----------------------------------------------------------------------------------------
+%	GRAPHICS DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for header image
+\usepackage{graphicx}
+
+%for floating figures
+\usepackage{wrapfig}
+\usepackage{float}
+%\floatstyle{boxed} 
+%\restylefloat{figure}
+
+%for drawing graphics		
+\usepackage{tikz}				
+\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+
+
+%----------------------------------------------------------------------------------------
+%	Color DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+\usepackage{color}
+
+
+\definecolor{sectcol}{rgb}{0.00000,0.55650,0.24690}%
+\definecolor{bgcol}{rgb}{0.69120,0.77950,0.00000}%0.9681    0.8962    0.8378
+\definecolor{softcol}{rgb}{0.96810, 0.89620,0.83780}
+
+\definecolor{mycolor1}{rgb}{0.01430,0.01430,0.01430}%
+\definecolor{mycolor2}{rgb}{0.10740,0.22340,0.49840}%
+\definecolor{mycolor3}{rgb}{      0,    0.3977,    0.4220}
+\definecolor{mycolor4}{rgb}{0.00000,0.55650,0.24690}%
+\definecolor{mycolor5}{rgb}{0.69120,0.77950,0.00000}%0.9681    0.8962    0.8378
+\definecolor{mycolor6}{rgb}{0.96810, 0.89620,0.83780}
+%accent color
+%\definecolor{sectcol}{RGB}{0.00000,0.55650,0.24690}
+
+%dark background color
+%\definecolor{bgcol}{RGB}{0.10740,0.22340,0.49840}
+
+%light background / accent color
+%\definecolor{softcol}{RGB}{0.69120,0.77950,0.00000}
+
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={},
+            colorlinks=true,
+            citecolor=mycolor2,
+            urlcolor=mycolor2,
+            linkcolor=mycolor2,
+pdfborder={0 0 0}}
+
+
+%============================================================================%
+%
+%
+%	DEFINITIONS
+%
+%
+%============================================================================%
+
+%----------------------------------------------------------------------------------------
+% 	HEADER
+%----------------------------------------------------------------------------------------
+
+% remove top header line
+\renewcommand{\headrulewidth}{0pt} 
+
+%remove botttom header line
+\renewcommand{\footrulewidth}{0pt}	  	
+
+%remove pagenum
+\renewcommand{\thepage}{}	
+
+%remove section num		
+\renewcommand{\thesection}{}			
+
+%----------------------------------------------------------------------------------------
+% 	ARROW GRAPHICS in Tikz
+%----------------------------------------------------------------------------------------
+
+% a six pointed arrow poiting to the left
+\newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}	
+
+% include the left arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\larrow}[1]
+{\begin{tikzpicture}[scale=0.58]
+	 \filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
+ \end{tikzpicture}
+}
+
+% a six pointed arrow poiting to the right
+\newcommand{\tzrarrow}{ (0,0.2) -- (0.1,0) -- (0.3,0) -- (0.2,0.2) -- (0.3,0.4) -- (0.1,0.4) -- cycle;}
+
+% include the right arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\rarrow}
+{\begin{tikzpicture}[scale=0.7]
+	\filldraw[fill=sectcol!100,draw=sectcol!100!black] \tzrarrow
+ \end{tikzpicture}
+}
+
+
+
+%----------------------------------------------------------------------------------------
+%	custom sections
+%----------------------------------------------------------------------------------------
+
+% create a coloured box with arrow and title as cv section headline
+% param 1: section title
+%
+\newcommand{\cvsection}[1]
+{
+\colorbox{sectcol}{\mystrut \makebox[1\linewidth][l]{
+\larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \textcolor{mycolor6}{\textbf{#1}}\hspace{4pt}
+}}\\
+}
+
+%create a coloured arrow with title as cv meta section section
+% param 1: meta section title
+%
+\newcommand{\metasection}[2]
+{
+\begin{tabular*}{1\textwidth}{p{2.4cm} p{11cm}}
+\larrow{bgcol}	\normalsize{\textcolor{sectcol}{#1}}&#2\\[12pt]
+\end{tabular*}
+}
+
+%----------------------------------------------------------------------------------------
+%	 CV EVENT
+%----------------------------------------------------------------------------------------
+
+% creates a stretched box as cv entry headline followed by two paragraphs about 
+% the work you did
+% param 1:	event time i.e. 2014 or 2011-2014 etc.
+% param 2:	event name (what did you do?)
+% param 3:	institution (where did you work / study)
+% param 4:	what was your position
+% param 5:	some words about your contributions
+%
+\newcommand{\cvevent}[5]
+{
+\vspace{8pt}
+	\begin{tabular*}{1\textwidth}{p{5.3cm}  p{4.8cm} x{6.9cm}}
+ \textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol}{#3}
+
+	\end{tabular*}
+\vspace{-12pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{p{0.3cm} p{16.4cm}}
+&		 \larrow{bgcol}  #4\\[3pt]
+&		 \larrow{bgcol}  #5\\[6pt]
+	\end{tabular*}
+
+}
+
+\newcommand{\cveventsingle}[4]
+{
+\vspace{8pt}
+	\begin{tabular*}{1\textwidth}{p{5.3cm}  p{4.8cm} x{6.9cm}}
+ \textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol}{#3}
+
+	\end{tabular*}
+\vspace{-12pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{p{0.3cm} p{16.4cm}}
+&		 \larrow{bgcol}  #4\\[3pt]
+	\end{tabular*}
+
+}
+
+\newcommand{\cveventnone}[3]
+{
+\vspace{8pt}
+	\begin{tabular*}{1\textwidth}{p{5.3cm}  p{4.8cm} x{6.9cm}}
+ \textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol}{#3}
+
+	\end{tabular*}
+	\vspace{-12pt}
+\textcolor{softcol}{\hrule}
+}
+
+
+
+% creates a stretched box as 
+\newcommand{\cveventmeta}[2]
+{
+	\mbox{\mystrut \hspace{87pt}\textit{#1}}\\
+	#2
+}
+
+%----------------------------------------------------------------------------------------
+% CUSTOM STRUT FOR EMPTY BOXES
+%----------------------------------------- -----------------------------------------------
+\newcommand{\mystrut}{\rule[-.3\baselineskip]{0pt}{\baselineskip}}
+
+%----------------------------------------------------------------------------------------
+% CUSTOM LOREM IPSUM
+%----------------------------------------------------------------------------------------
+\newcommand{\lorem}
+{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.}
+
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT CONTENT
+%
+%
+%
+%============================================================================%
+\begin{document}
+
+
+%use our custom fancy header definitions
+\pagestyle{fancy}	
+
+
+%---------------------------------------------------------------------------------------
+%	TITLE HEADLINE
+%----------------------------------------------------------------------------------------
+\vspace{-20.55pt}
+
+
+% use this for single words, e.g. CV or RESUME etc.
+\hspace{-0.25\linewidth}\colorbox{bgcol}{
+\makebox[1.5\linewidth][l]{
+\hspace{4.3cm} 
+\huge{\textcolor{mycolor6}{\textsc{Niccol\`o Antonello}}
+\textcolor{sectcol}{\rule[0mm]{0.5mm}{0.5cm}}
+\Large{\textcolor{mycolor6}{Curriculum Vitae}} 
+} 
+ }
+}
+
+
+%----------------------------------------------------------------------------------------
+%	HEADER IMAGE
+%----------------------------------------------------------------------------------------
+
+%\begin{figure}[H]
+%\begin{flushright}
+%	\includegraphics[trim= 320 130 460 210,clip,width=0.2\linewidth]{myfoto.jpg}	%trimming relative to image size!
+%\end{flushright}
+%\end{figure}
+
+%---------------------------------------------------------------------------------------
+%	QR CODE (optional)
+%----------------------------------------------------------------------------------------
+%\vspace{-136pt}
+%\hspace{0.75\linewidth}
+%\includegraphics[width=103pt]{qrcode}
+%\normalsize
+%\vspace{88pt}
+
+%---------------------------------------------------------------------------------------
+%	META SECTION
+%----------------------------------------------------------------------------------------
+
+\vspace{10pt}
+
+\metasection{Status:}{PhD at KU Leuven, Belgium}
+\metasection{Fields:}{Acoustics, Audio Signal Processing, Numerical Optimization} 
+
+\vspace{6pt}
+
+%---------------------------------------------------------------------------------------
+%	SUMMARAY (optional)
+%----------------------------------------------------------------------------------------
+
+%\cvsection{Summary}\\
+%Digital media graduate with four years project experience in the field of technology based assessment. Specialized in development of test-scenario engines and innovative, rich media item formats. Master studies focused on teams from different disciplines and cultural backgrounds on solutions for complex problems.  Prior knowledge has been collected in he field of usability / accessibility during bachelor studies.\\
+
+%============================================================================%
+%
+%	CV SECTIONS AND EVENTS (MAIN CONTENT)
+%
+%============================================================================%
+
+%---------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\cvsection{Experience}
+
+\textcolor{softcol}{\hrule}
+%
+\cvevent{May 2013-Present}{PhD}{KU Leuven (BE)}{Supervisors: \href{http://homes.esat.kuleuven.be/~tvanwate/}{Toon van Waterschoot}, \href{http://www.esat.kuleuven.be/stadius/person.php?id=2}{Marc Moonen} 
+}
+{The PhD is part of the \href{http://www.dreams-itn.eu/}{DREAMS Initial Training Network (ITN)} FP7-PEOPLE Marie Curie ITN consortium. 
+The research focuses on developing algorithms for solving inverse problems relating to {\em dereverberation} and {\em room identification} using {\em numerical room acoustics models} and {\em compressed sensing}.
+}
+
+\textcolor{softcol}{\hrule}
+
+\cvevent{May~-~Sept. 2015}{Visiting Researcher}{Imperial College London (UK)}{Supervisor: 
+\href{http://www.ee.ic.ac.uk/naylor/}{Patrick A. Naylor}  
+}
+{Research collaboration 
+with Prof. Patrick A. Naylor (still ongoing) and 
+member of the team for the   
+\href{http://sse.royalsociety.org/2015/sound-interactions/}{Royal Society Summer Science Exhibition 2015 - Sound Interactions } event. 
+}
+
+\textcolor{softcol}{\hrule}
+
+\cvevent{Oct.~2012~-Feb.~2013}{Research Assistant}{Technical University of Denmark (DK)}{
+Supervisor: \href{http://www.act.elektro.dtu.dk/about-us/contact_us}{Finn T. Agerkvist}  
+}
+{
+Project: 
+``Compensation of flux modulation 
+distortion using an additional coil
+in a loudspeaker unit'' 
+which resulted in a \href{http://google.com/patents/WO2015067591A1?cl=en}{patent application}. 
+}
+\vspace{7pt}
+%---------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Education}
+
+\textcolor{softcol}{\hrule}
+
+\cvevent{2013~-~2017}{PhD, KU Leuven}{Various institutions}{
+Relevant coursework: 
+Numerical Optimization (Prof. M. Diehl, KU Leuven), 
+DREAMS Machine Learning School at Imperial London College (Prof. S. Theodorides et al.),
+DREAMS Advanced Psychoacoustic School at Aalborg Univeristy (Prof. T. Lokki et al.), 
+TEMPO Nonlinear Model Predictive Control School at University of Freiburg (Prof.J.B. Rawlings et al.),  
+}{ 
+Thesis title: ``Dereverberation by inverse solution of the acoustic wave equation on a finite element
+grid''. 
+}
+
+\textcolor{softcol}{\hrule}
+
+\cvevent{2010~-~2012}{M.Sc, Engineering Acoustics}{Technical University of Denmark (DK)}{
+Relevant coursework: Advanced Acoustics, Acoustic Communication, Electroacoustic Transducers and Systems, Architectural Acoustics, Sound and Vibration, Partial Differential Equations
+}{ 
+Thesis title: ``Balanced Armature Transducers for Hi-fi Systems''. 
+}
+
+\textcolor{softcol}{\hrule}
+
+\cveventnone{2007~-~2010}{B.Sc, Electrical Engineering}{Universit\'a degli Studi di Padova (IT)}
+\vspace{6pt}
+\vspace{7pt}
+%---------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Publications}
+
+\textcolor{softcol}{\hrule}
+
+\cveventnone{Journal Papers}{}{ }
+
+\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{p{0.3cm} p{16.4cm}}
+&		 \larrow{bgcol}  N. Antonello, E. De Sena, M. Moonen, P. A. Naylor and T. van Waterschoot, ``Room impulse
+response interpolation using a sparse spatio-temporal representation of a reverberant sound
+field'', IEEE Transactions of Audio, Speech Language Processing, to appear.\\[3pt]
+&		 \larrow{bgcol}  E. De Sena, N. Antonello, M. Moonen, and T. van Waterschoot, ``On the Modeling of Rectangular Geometries in Room Acoustic Simulations'', IEEE Transactions of Audio, Speech Language Processing, April 2015.\\[3pt]
+	\end{tabular*}
+
+
+\newpage
+
+\textcolor{softcol}{\hrule}
+\cveventnone{Conference Papers}{}{ }
+\vspace{6pt}
+
+	\begin{tabular*}{1\textwidth}{p{0.3cm} p{16.4cm}}
+& \larrow{bgcol}
+N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot, "Sound field control in a reverberant room using the Finite Difference Time Domain method," in AES 60th Int. Conf., Leuven, Belgium, Feb. 2016.
+\\[6pt]
+
+& \larrow{bgcol}
+{N. Antonello, T. van Waterschoot, M. Moonen, and P. A. Naylor}, {``Evaluation of a Numerical Method for Identifying Surface Acoustic Impedances in a Reverberant Room,''} in Proc. 10th European Congress and Exposition on Noise Control Engineering (EURONOISE 2014), December 2014.
+\\[3pt]
+
+& \larrow{bgcol}
+N. Antonello, F. T. Agerkvist, ``Compensation of the Flux Modulation Distortion Using an Additional Coil in a Loudspeaker Unit'', in AES 137th Int. Conv., Los Angeles, USA, Oct. 2014.
+\\[3pt]
+
+& \larrow{bgcol} 
+{N. Antonello, T. van Waterschoot, M. Moonen, and P. A. Naylor},{ ``Identification of Surface Acoustic Impedances in a Reverberant Room Using the FDTD Method,''} in International Workshop on Acoustic Signal Enhancement IWAENC 2014, Antibes, France, September 2014 (candidate for best student paper award).
+\\[3pt]
+
+
+& \larrow{bgcol}
+{N. Antonello, T. van Waterschoot, M. Moonen, and P. A. Naylor},{ ``Source localization and signal reconstruction in a reverberant field using the FDTD method,''} in Proc. European Signal Process. Conf. (EUSIPCO '14), Lisbon, Portugal, Feb. 2014.
+\\[3pt]
+
+	\end{tabular*}
+	
+\textcolor{softcol}{\hrule}
+\cveventsingle{Patents}{}{ }{
+{F. T. Agerkvist, N. Antonello, and A. Christensen},``Loudspeaker assembly with suppression of magnetic flux modulation distortion,'' WO Patent App. PCT/EP2014/073 655, May 2015.
+}
+
+\vspace{7pt}
+%---------------------------------------------------------------------------------------
+%	SKILLS SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Skills}
+
+\textcolor{softcol}{\hrule}
+\cvevent{Software}{}{}{
+{\bf Programming Languages: }{\em Proficient}: Julia, MATLAB, \LaTeX . {\em Familiar}: Python, C, Java. 
+}
+{
+{\bf Others: }{unix-shell, vim, Odeon, Adobe Flash, Maple, SketchUp, Comsol.}
+}
+
+\textcolor{softcol}{\hrule}
+\cvevent{Technical Skills}{}{}{
+{\bf Measurements}: experience with Br\"uel \& Kj\ae r  PULSE system analyzer, Klippel R\&D System and
+measuring room impulse responses/reverberation time.    
+}
+{
+{\bf Others}: soldering simple analog circuits, oscilloscope usage, (non)technical drawing.
+}
+
+
+\textcolor{softcol}{\hrule}
+\cvevent{Languages}{}{}{
+{\em Proficient}: Italian (Native), English 
+}
+{
+{\em Elementary}: French
+}
+
+\vspace{7pt}
+%---------------------------------------------------------------------------------------
+%	Software Projects
+%--------------------------------------------------------------------------------------
+\cvsection{Software Projects}
+
+
+
+	\begin{tabular*}{1\textwidth}{p{0.3cm} p{16.4cm}}
+
+&		 \larrow{bgcol}  
+{\bf ProximalOperators.jl}
+Julia package to compute the proximal operator of several functions commonly used
+in optimization algorithms like ADMM and (fast) proximal gradient methods.
+\href{https://github.com/nantonel/RIM.jl}{https://github.com/nantonel/RIM.jl}
+\\[3pt]
+
+
+&		 \larrow{bgcol}  
+{\bf RIM.jl}
+Julia package for generating room acoustics impulse response using the Randomized Image Method (RIM). 
+\href{https://github.com/nantonel/RIM.jl}{https://github.com/nantonel/RIM.jl}
+\\[3pt]
+
+&		 \larrow{bgcol}  
+{\bf AcFdtd.jl}
+Julia package for 3D room acoustics simulations using Finite Difference Time Domain (FDTD) method.
+\href{https://github.com/nantonel/AcFdtd.jl}{https://github.com/nantonel/AcFdtd.jl}
+\\[3pt]
+	
+	\end{tabular*}
+
+
+
+
+%---------------------------------------------------------------------------------------
+%	TEACHING SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Teaching}
+
+
+
+	\begin{tabular*}{1\textwidth}{p{0.3cm} p{16.4cm}}
+&		 \larrow{bgcol}  
+Teaching Assistant at Toon van Waterschoot's Signals and Systems Exercise sessions course 2017/18 (KU Leuven - Groep T)
+\\[3pt]	
+&		 \larrow{bgcol}  
+Lecture: ``Sparsity, Regularization and Convex Optimization'' at Toon van Waterschoot's Advanced DSP topics 2 course (KU Leuven Geel) - 09/11/2016
+\\[3pt]
+&		 \larrow{bgcol}  
+Teaching Assistant at Marc Moonen's DSP-CSI Laboratory sessions course 2013-2017 (KU Leuven)
+\\[3pt]
+&		 \larrow{bgcol}  
+Teaching Assistant at Finn Jacobsen's Advance Acoustics Laboratory sessions course 2011-2012 (DTU)
+\\[3pt]
+	\end{tabular*}
+
+
+
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT END
+%
+%
+%
+%============================================================================%
+\end{document}
