@@ -7,25 +7,26 @@ author_profile: true
 
 * _A little bit about me:_
 
-  I come from a small town, [Castelfranco Veneto](http://en.wikipedia.org/wiki/Castelfranco_Veneto), in Italy. 
-  I studied Electrical Engineering at [Università degli Studi di Padova](www.unipd.it) where I got my BSc in 2010. 
-  After that I moved to Denmark 
+  I come from a small town, [Castelfranco Veneto](http://en.wikipedia.org/wiki/Castelfranco_Veneto), in Italy.
+  I studied Electrical Engineering at [Università degli Studi di Padova](www.unipd.it) where I got my BSc in 2010.
+  After that I moved to Denmark
   where I got my MSc in Acoustic Engineering at the [Technical University of Denmark (DTU)](www.dtu.dk).
 
 
-  Currently I'm a PhD student at [KU Leuven](www.kuleuven.be), 
-  within the [Marie Skłodowska-Curie Actions Initial Training Network](http://ec.europa.eu/research/mariecurieactions/) 
-  "_Dereverberation and Reverberation of Audio, Music and Speech_ 
+  Currently I'm a PhD student at [KU Leuven](www.kuleuven.be),
+  within the [Marie Skłodowska-Curie Actions Initial Training Network](http://ec.europa.eu/research/mariecurieactions/)
+  "_Dereverberation and Reverberation of Audio, Music and Speech_
   ([DREAMS](http://www.dreams-itn.eu/))".
 
 
-* _My research interests:_ 
+* _My research interests:_
   * room acoustics
   * numerical optimization
-  * acoustic inverse problems
   * (audio) signal processing
-									 
+  * acoustic inverse problems
+
+
 * _Other stuff I like to do:_
   * Drawing and animation (check [here](/animation/))
-  * Playing instruments 
-  * Programming 
+  * Playing instruments
+  * Programming
