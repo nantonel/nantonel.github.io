@@ -10,7 +10,7 @@ author_profile: true
 * **Journal Papers**
 
   * N. Antonello, E. De Sena, M. Moonen, P. A. Naylor and T. van Waterschoot,
-    "Room impulse response interpolation using a sparse spatio-temporal representation of the sound field", IEEE/ACM Transactions of Audio, Speech Language Processing, to appear.
+    "[Room impulse response interpolation using a sparse spatio-temporal representation of the sound field](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/17-26.pdf)", IEEE/ACM Transactions of Audio, Speech Language Processing, to appear.
 
   * E. De Sena, N. Antonello, M. Moonen, and T. van Waterschoot,
       "[On the Modeling of Rectangular Geometries in Room Acoustic Simulations](ftp://ftp.esat.kuleuven.be/pub/SISTA/enzo/reports/14-121a.pdf)," IEEE/ACM Transactions of Audio, Speech Language Processing, April 2015.
