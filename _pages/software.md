@@ -8,6 +8,8 @@ author_profile: true
 ---
 
 * **Numerical Optimization**
+	* [AbstractOperators.jl](https://github.com/kul-forbes/AbstractOperators.jl)
+	Abstract operators for large scale optimization in Julia
 	* [ProximalOperators.jl](https://github.com/kul-forbes/ProximalOperators.jl)
 	Julia package to compute the proximal operator of several functions commonly used in nonsmooth optimization problems.
 
