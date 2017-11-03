@@ -15,3 +15,5 @@ npm-debug.log*
 *.aux
 *.log
 *.out
+*.bbl
+*.blg
