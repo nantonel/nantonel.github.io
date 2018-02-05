@@ -17,7 +17,7 @@ author_profile: true
 
 
 * **Conference Papers**
-    * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot, "[Joint source localization and dereverberation by sound field interpolation using sparse regularizations](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/17-163.pdf)," in in Proc. IEEE Int. Conf. on Acoust. Speech and Signal Process. (ICASSP-18), submitted. [[link]](/jsld/)
+    * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot, "[Joint source localization and dereverberation by sound field interpolation using sparse regularizations](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/17-163.pdf)," in in Proc. IEEE Int. Conf. on Acoust. Speech and Signal Process. (ICASSP-18), to appear. [[link]](/jsld/)
     
     * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot,
     "[Sound field control in a reverberant room using the Finite Difference Time Domain method](ftp://ftp.esat.kuleuven.be/pub/SISTA/nantonel/15-124.pdf),"
