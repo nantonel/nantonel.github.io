@@ -9,6 +9,9 @@ author_profile: true
 
 * **Journal Papers**
 
+  * N. Antonello, L. Stella, P. Patrinos and T. van Waterschoot,
+    "[Proximal gradient algorithms: applications in signal processing](https://arxiv.org/abs/1803.01621)", arXiv:1803.01621, Mar. 2018.
+
   * N. Antonello, E. De Sena, M. Moonen, P. A. Naylor and T. van Waterschoot,
     "[Room impulse response interpolation using a sparse spatio-temporal representation of the sound field](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/17-26.pdf)", IEEE/ACM Transactions of Audio, Speech Language Processing, vol. 25, no. 10, pp. 1929-1941, Oct. 2017.
 
@@ -17,7 +20,7 @@ author_profile: true
 
 
 * **Conference Papers**
-    * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot, "[Joint source localization and dereverberation by sound field interpolation using sparse regularizations](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/17-163.pdf)," in in Proc. IEEE Int. Conf. on Acoust. Speech and Signal Process. (ICASSP-18), to appear. [[link]](/jsld/)
+    * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot, "[Joint source localization and dereverberation by sound field interpolation using sparse regularizations](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/17-163.pdf)," in Proc. IEEE Int. Conf. on Acoust. Speech and Signal Process. (ICASSP-18), to appear. [[link]](/jsld/)
     
     * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot,
     "[Sound field control in a reverberant room using the Finite Difference Time Domain method](ftp://ftp.esat.kuleuven.be/pub/SISTA/nantonel/15-124.pdf),"
