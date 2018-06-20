@@ -20,21 +20,21 @@ author_profile: true
 
 
 * **Conference Papers**
-    * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot, "[Joint source localization and dereverberation by sound field interpolation using sparse regularizations](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/17-163.pdf)," in Proc. IEEE Int. Conf. on Acoust. Speech and Signal Process. (ICASSP-18), to appear. [[link]](/jsld/)
+    * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot, "[Joint source localization and dereverberation by sound field interpolation using sparse regularization](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/17-163.pdf)," in Proc. IEEE Int. Conf. on Acoust. Speech and Signal Process. (ICASSP-18), Calgary, Canada, Apr. 2018. [[audio samples]](/jsld/)
     
     * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot,
     "[Sound field control in a reverberant room using the Finite Difference Time Domain method](ftp://ftp.esat.kuleuven.be/pub/SISTA/nantonel/15-124.pdf),"
-    in AES 60th Int. Conf., Leuven, Belgium, Feb. 2016.
+    in Proc. AES 60th Int. Conf., Leuven, Belgium, Feb. 2016.
 
     * N. Antonello, T. van Waterschoot, M. Moonen, and P. Naylor,
     "[Evaluation of a Numerical Method for Identifying Surface Acoustic Impedances in a Reverberant Room](ftp://ftp.esat.kuleuven.be/pub/SISTA/nantonel/15-30.pdf),"
-    in Proc. of 10th European Congress and Exposition on Noise Control Engineering (EURONOISE 2015), Maastricht, the Netherlands, June 2015.
+    in Proc. 10th European Congress and Exposition Noise Control Engineering (EURONOISE 2015), Maastricht, the Netherlands, June 2015.
 
-    * N. Antonello, F. T. Agerkvist, "Compensation of the Flux Modulation Distortion Using an Additional Coil in a Loudspeaker Unit", in AES 137th Int. Conv., Los Angeles, USA, Oct. 2014.
+    * N. Antonello, F. T. Agerkvist, "Compensation of the Flux Modulation Distortion Using an Additional Coil in a Loudspeaker Unit", in Proc. AES 137th Int. Conv., Los Angeles, USA, Oct. 2014.
 
     * N. Antonello, T. van Waterschoot, M. Moonen, and P. Naylor,
     "[Identification of Surface Acoustic Impedances in a Reverberant Room Using the FDTD Method](ftp://ftp.esat.kuleuven.be/pub/SISTA/nantonel/14-84.pdf)",
-    in Proc. 2014 Int. Workshop Acoustic Signal Enhancement (IWAENC 2014), Antibes, France, Sep. 2014 (nominated for best student paper award).
+    in Proc. 2014 Int. Workshop Acoustic Signal Enhancement (IWAENC 2014), Antibes, France, Sep. 2014.
 
     * N. Antonello, T. van Waterschoot, M. Moonen, and P. Naylor,
     "[Source Localization and Signal Reconstruction in a Reverberant Field Using the FDTD Method](ftp://ftp.esat.kuleuven.be/pub/SISTA/nantonel/14-38.pdf)",
