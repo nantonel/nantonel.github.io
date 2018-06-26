@@ -4,6 +4,7 @@ permalink: "/software/"
 type: pages
 values:
 layout: single
+classes: wide
 author_profile: true
 ---
 

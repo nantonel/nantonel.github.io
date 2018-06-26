@@ -4,10 +4,14 @@ permalink: "/publications/"
 type: pages
 values:
 layout: single
+classes: wide
 author_profile: true
 ---
 
 * **Journal Papers**
+
+  * N. Antonello, E. De Sena, M. Moonen, P. A. Naylor and T. van Waterschoot,
+    "[Joint acoustic localization and dereverberation by sound field interpolation](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/18-83.pdf)", submitted for publication, June 2018. [[audio samples]](/adelfi/)
 
   * N. Antonello, L. Stella, P. Patrinos and T. van Waterschoot,
     "[Proximal gradient algorithms: applications in signal processing](https://arxiv.org/abs/1803.01621)", arXiv:1803.01621, Mar. 2018.

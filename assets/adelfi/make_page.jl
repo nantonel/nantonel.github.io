@@ -9,6 +9,7 @@ permalink: \"\/adelfi\/\"
 type: pages
 values:
 layout: single
+classes: wide
 author_profile: false
 ---
 <script type=\"text\/javascript\" async
@@ -20,19 +21,21 @@ audio {
       }
 <\/style>
 
-## Acoustic dereverberation and source localization by sound field interpolation
+## Joint acoustic localization and dereverberation by sound field interpolation
 
 ### Abstract
 
-In this paper, source localization and dereverberation are formulated jointly 
-as an inverse problem. 
-The inverse problem consists in the interpolation of the sound field measured by a set of microphones: 
-the recorded sound pressure is matched with that of a particular acoustic model. 
-This model is based on a collection of equivalent sources creating either spherical or plane waves.  
-In order to achieve meaningful results, spatial, spatio-temporal and spatio-spectral sparsity can be promoted in the signals originating from the equivalent sources. 
-The inverse problem consists of a large-scale optimization problem that is solved using a first order matrix-free optimization algorithm. 
-It is shown that once the equivalent source signals capable of effectively interpolating the sound field are obtained,they can be readily used to localize a speech sound source in terms of direction of arrival (DOA) and to perform dereverberation in a highly reverberant environment.
-Simulation and real measurement results show that the proposed method is robust against both localized and diffuse noise exhibiting a noise reduction in the dereverberated audio signals.    
+Acoustic source localization and dereverberation are formulated jointly
+as an inverse problem.
+The inverse problem consists of the interpolation of the sound field measured by a set of microphones.
+The recorded sound pressure is matched with that of a particular acoustic model.
+This model is based on a collection of equivalent sources creating either spherical or plane waves.
+In order to achieve meaningful results, spatial, spatio-temporal and spatio-spectral sparsity can be promoted in the signals originating from the equivalent sources.
+The large-scale optimization problem
+resulting from the inverse problem formulation
+is solved using a first order matrix-free optimization algorithm combined with a weighted overlap-add procedure.
+It is shown that once the equivalent source signals capable of effectively interpolating the sound field are obtained, they can be readily used to localize a moving sound source in terms of direction of arrival (DOA) and to perform dereverberation in a highly reverberant environment.
+Results from simulation experiments and from real measurements show that the proposed algorithm is robust against both localized and diffuse noise exhibiting a noise reduction in the dereverberated signals.
 
 "
 )
@@ -239,7 +242,20 @@ Simulation results utilize the first 5 seconds of track 5 of Bang & Olufsen CD \
 
 Measurement results were obtained using the [LOCATA challenge database](https://lms.lnt.de/locata/) and the [CSTR VCTK database](http://homepages.inf.ed.ac.uk/jyamagis/page3/page58/page58.html).
 
-This research work was carried out at the ESAT Laboratory of KU Leuven, the frame of the FP7-PEOPLE Marie Curie Initial Training Network \"_Dereverberation and Reverberation of Audio, Music, and Speech (DREAMS)_\", funded by the European Commission under Grant Agreement no. 316969, KU Leuven Research Council CoE PFV/10/002 (OPTEC), the Interuniversity Attraction  Poles Programme initiated by the Belgian Science Policy Office IUAP P7/19 \"_Dynamical systems control and optimization_\" (DYSCO) 2012-2017, KU Leuven Impulsfonds IMP/14/037 and KU Leuven C2-16-00449 \"_Distributed Digital Signal Processing for Ad-hoc Wireless Local Area Audio Networking_\". The scientific responsibility is assumed by its authors.
+This research work was carried out
+at the ESAT Laboratory of KU Leuven,
+the frame of the FP7-PEOPLE
+Marie Curie Initial Training Network
+\"Dereverberation and Reverberation
+of Audio, Music, and Speech (DREAMS)\",
+funded by the European Commission
+under Grant Agreement no. 316969,
+KU Leuven Impulsfonds IMP/14/037,
+KU Leuven Internal Funds VES/16/032,
+KU Leuven C2-16-00449
+\"Distributed Digital Signal Processing
+for Ad-hoc Wireless Local Area Audio Networking\".
+The research leading to these results has received funding from the European Research Council under the European Union's Horizon 2020 research and innovation program / ERC Consolidator Grant: SONORA (no. 773268). This paper reflects only the authors' views and the Union is not liable for any use that may be made of the contained information. 
 "
 )
 
