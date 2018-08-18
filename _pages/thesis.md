@@ -11,6 +11,9 @@ author_profile: true
 ![](/assets/images/interauralv1.gif)
 
 ## Solving inverse problems in room acoustics using physical models, sparse regularization and numerical optimization
+
+[Download Thesis (8.3 MB)](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/18-96.pdf)
+
 ### Preface
 
 This thesis is the result of more than five years[<sup>1</sup>](#footnote)

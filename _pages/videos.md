@@ -8,6 +8,9 @@ classes: wide
 author_profile: true
 ---
 
+* **StructuredOptimization.jl presentation at Juliacon 2018**
+{% include video id="N-bXwz21gM4" provider="youtube" %}
+
 * **Finite difference time domain simulations**
 {% include video id="rbRbrAuLO6w?list=PL1IBft9eGEhxlCFExNRrsczsWjP70NiGR" provider="youtube" %}
 

@@ -43,3 +43,8 @@ author_profile: true
     * N. Antonello, T. van Waterschoot, M. Moonen, and P. Naylor,
     "[Source Localization and Signal Reconstruction in a Reverberant Field Using the FDTD Method](ftp://ftp.esat.kuleuven.be/pub/SISTA/nantonel/14-38.pdf)",
     in Proc. 22nd European Signal Process. Conf. (EUSIPCO 2014), Lisbon, Portugal, Sep. 2014.
+
+
+* **PhD Thesis**
+  * N. Antonello,
+    "[Solving inverse problems in room acoustics using physical models, sparse regularization and numerical optimization](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/18-96.pdf)", PhD thesis, August 2018.
