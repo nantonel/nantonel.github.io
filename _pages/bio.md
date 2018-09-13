@@ -17,7 +17,7 @@ author_profile: true
   in 2010 and 2012, respectively.
 
 
-  He is currently pursuing the Ph.D. degree at [KU Leuven](http://www.kuleuven.be/english/) (Belgium) as an
+  He obtained his Ph.D. degree at [KU Leuven](http://www.kuleuven.be/english/) (Belgium) as an
   Early Stage Researcher in the [Marie Curie Initial Training Network](http://ec.europa.eu/research/mariecurieactions/)
   ["Dereverberation and Reverberation of Audio, Music, and Speech (DREAMS)"](http://www.dreams-itn.eu/).
 
