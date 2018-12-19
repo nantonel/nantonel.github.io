@@ -22,7 +22,5 @@ author_profile: true
 * **Acoustics**
     * [RIM](https://github.com/nantonel/RIM.jl) - 
       Julia Package for Room Acoustics Impulse Response Generator using the Randomized Image Method (RIM)
-    * [AcFDTD](https://github.com/nantonel/AcFdtd.jl) - 
-      Julia Pacakage for 3D Room Acoustics Finite Difference Time Domain (FDTD) Simulator
 
 Check also my [Github profile](https://github.com/nantonel) 

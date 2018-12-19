@@ -1,6 +1,6 @@
 ---
 scope:
-permalink: "/jsld/"
+permalink: "jsld/"
 type: pages
 values:
 layout: single

@@ -17,3 +17,6 @@ npm-debug.log*
 *.out
 *.bbl
 *.blg
+*.gz
+*.fls
+*.fdb_latexmk

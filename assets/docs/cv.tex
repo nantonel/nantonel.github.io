@@ -9,7 +9,7 @@
 %	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 %	copies of the Software, and to permit persons to whom the Software is
 %	furnished to do so, subject to the following conditions:
-%	
+%
 %	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 %	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 %	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -17,7 +17,7 @@
 %	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 %	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %	THE SOFTWARE.
-%	
+%
 %
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
 
@@ -29,7 +29,7 @@
 %============================================================================%
 
 %we use article class because we want to fully customize the page and dont use a cv template
-\documentclass[10pt,A4]{article}	
+\documentclass[10pt,A4]{article}
 
 
 %----------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@
 %----------------------------------------------------------------------------------------
 
 %we use utf8 since we want to build from any machine
-\usepackage[utf8]{inputenc}		
+\usepackage[utf8]{inputenc}
 
 %----------------------------------------------------------------------------------------
 %	LOGIC
@@ -59,14 +59,14 @@
 %\usepackage{fetamont}
 %\usepackage[default]{gillius}
 %\usepackage[light,math]{iwona}
-%\usepackage[thin]{roboto} 
+%\usepackage[thin]{roboto}
 
 % set font default
-\renewcommand*\familydefault{\sfdefault} 	
+\renewcommand*\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
 
 % more font size definitions
-\usepackage{moresize}		
+\usepackage{moresize}
 
 
 %----------------------------------------------------------------------------------------
@@ -74,17 +74,17 @@
 %----------------------------------------------------------------------------------------
 
 %debug page outer frames
-%\usepackage{showframe}			
+%\usepackage{showframe}
 
 
 %define page styles using geometry
-\usepackage[a4paper]{geometry}		
+\usepackage[a4paper]{geometry}
 
 % for example, change the margins to 2 inches all round
-\geometry{top=1.75cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+\geometry{top=1.75cm, bottom=-.6cm, left=1.5cm, right=1.5cm}
 
 %use customized header
-\usepackage{fancyhdr}				
+\usepackage{fancyhdr}
 \pagestyle{fancy}
 
 %less space between header and content
@@ -92,7 +92,7 @@
 
 
 \usepackage{hyperref}
-		
+
 
 
 %customize entries left, center and right
@@ -106,10 +106,10 @@
 
 %----------------------------------------------------------------------------------------
 %	TABLE /ARRAY DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 %for layouting tables
-\usepackage{multicol}			
+\usepackage{multicol}
 \usepackage{multirow}
 
 %extended aligning of tabular cells
@@ -121,7 +121,7 @@
 
 %----------------------------------------------------------------------------------------
 %	GRAPHICS DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 %for header image
 \usepackage{graphicx}
@@ -129,17 +129,17 @@
 %for floating figures
 \usepackage{wrapfig}
 \usepackage{float}
-%\floatstyle{boxed} 
+%\floatstyle{boxed}
 %\restylefloat{figure}
 
-%for drawing graphics		
-\usepackage{tikz}				
+%for drawing graphics
+\usepackage{tikz}
 \usetikzlibrary{shapes, backgrounds,mindmap, trees}
 
 
 %----------------------------------------------------------------------------------------
 %	Color DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 \usepackage{color}
 
@@ -187,23 +187,23 @@ pdfborder={0 0 0}}
 %----------------------------------------------------------------------------------------
 
 % remove top header line
-\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\headrulewidth}{0pt}
 
 %remove botttom header line
-\renewcommand{\footrulewidth}{0pt}	  	
+\renewcommand{\footrulewidth}{0pt}
 
 %remove pagenum
-\renewcommand{\thepage}{}	
+\renewcommand{\thepage}{}
 
-%remove section num		
-\renewcommand{\thesection}{}			
+%remove section num
+\renewcommand{\thesection}{}
 
 %----------------------------------------------------------------------------------------
 % 	ARROW GRAPHICS in Tikz
 %----------------------------------------------------------------------------------------
 
 % a six pointed arrow poiting to the left
-\newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}	
+\newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}
 
 % include the left arrow into a tikz picture
 % param1: fill color
@@ -256,7 +256,7 @@ pdfborder={0 0 0}}
 %	 CV EVENT
 %----------------------------------------------------------------------------------------
 
-% creates a stretched box as cv entry headline followed by two paragraphs about 
+% creates a stretched box as cv entry headline followed by two paragraphs about
 % the work you did
 % param 1:	event time i.e. 2014 or 2011-2014 etc.
 % param 2:	event name (what did you do?)
@@ -310,7 +310,7 @@ pdfborder={0 0 0}}
 
 
 
-% creates a stretched box as 
+% creates a stretched box as
 \newcommand{\cveventmeta}[2]
 {
 	\mbox{\mystrut \hspace{87pt}\textit{#1}}\\
@@ -345,7 +345,7 @@ pdfborder={0 0 0}}
 
 
 %use our custom fancy header definitions
-\pagestyle{fancy}	
+\pagestyle{fancy}
 
 
 %---------------------------------------------------------------------------------------
@@ -357,11 +357,11 @@ pdfborder={0 0 0}}
 % use this for single words, e.g. CV or RESUME etc.
 \hspace{-0.25\linewidth}\colorbox{bgcol}{
 \makebox[1.5\linewidth][l]{
-\hspace{4.3cm} 
+\hspace{4.3cm}
 \huge{\textcolor{mycolor6}{\textsc{Niccol\`o Antonello}}
 \textcolor{sectcol}{\rule[0mm]{0.5mm}{0.5cm}}
-\Large{\textcolor{mycolor6}{Curriculum Vitae}} 
-} 
+\Large{\textcolor{mycolor6}{Curriculum Vitae}}
+}
  }
 }
 
@@ -392,7 +392,7 @@ pdfborder={0 0 0}}
 \vspace{10pt}
 
 \metasection{Status:}{Postdoc at KU Leuven, Belgium}
-\metasection{Fields:}{Acoustics, Signal Processing, Numerical Algorithms, Optimization} 
+\metasection{Fields:}{Acoustics, Signal Processing, Numerical Algorithms, Optimization}
 
 \vspace{6pt}
 
@@ -417,44 +417,44 @@ pdfborder={0 0 0}}
 \textcolor{softcol}{\hrule}
 %
 \cvevent{September 2018 - Present}{Postdoc}{KU Leuven (BE)}{Supervisor: \href{http://homes.esat.kuleuven.be/~tvanwate/}{Toon van Waterschoot}}
-{The postdoc is part of the 
-\href{https://erc.europa.eu/}{European Research Council} 
-under the 
+{The postdoc is part of the
+\href{https://erc.europa.eu/}{European Research Council}
+under the
 \href{https://ec.europa.eu/programmes/horizon2020/}{
-European Union’s Horizon 2020} 
-research and innovation program 
+European Union’s Horizon 2020}
+research and innovation program
 / ERC Consolidator Grant: SONORA (no. 773268).
 }
 
-\cvevent{May 2013-August 2018}{PhD}{KU Leuven (BE)}{Supervisor: \href{http://homes.esat.kuleuven.be/~tvanwate/}{Toon van Waterschoot}~-~Co-supervisors: \href{http://www.esat.kuleuven.be/stadius/person.php?id=2}{Marc Moonen}, 
-\href{http://www.ee.ic.ac.uk/naylor/}{Patrick A. Naylor}  
+\cvevent{May 2013-August 2018}{PhD}{KU Leuven (BE)}{Supervisor: \href{http://homes.esat.kuleuven.be/~tvanwate/}{Toon van Waterschoot}~-~Co-supervisors: \href{http://www.esat.kuleuven.be/stadius/person.php?id=2}{Marc Moonen},
+\href{http://www.ee.ic.ac.uk/naylor/}{Patrick A. Naylor}
 }
-{The PhD is part of the \href{http://www.dreams-itn.eu/}{DREAMS Initial Training Network (ITN)} FP7-PEOPLE Marie Curie ITN consortium. 
+{The PhD is part of the \href{http://www.dreams-itn.eu/}{DREAMS Initial Training Network (ITN)} FP7-PEOPLE Marie Curie ITN consortium.
 The research focuses on developing algorithms for solving {\em inverse problems} relating to {\em dereverberation} and {\em room identification} using {\em numerical room acoustics models} and {\em compressed sensing}.
 }
 
 \textcolor{softcol}{\hrule}
 
-\cvevent{May~-~Sept. 2015}{Visiting Researcher}{Imperial College London (UK)}{Supervisor: 
-\href{http://www.ee.ic.ac.uk/naylor/}{Patrick A. Naylor}  
+\cvevent{May~-~Sept. 2015}{Visiting Researcher}{Imperial College London (UK)}{Supervisor:
+\href{http://www.ee.ic.ac.uk/naylor/}{Patrick A. Naylor}
 }
-{Research collaboration 
-with Prof. Patrick A. Naylor (still ongoing) and 
-team member of the   
-\href{http://sse.royalsociety.org/2015/sound-interactions/}{``Royal Society Summer Science Exhibition 2015 - Sound Interactions''} event. 
+{Research collaboration
+with Prof. Patrick A. Naylor (still ongoing) and
+team member of the
+\href{http://sse.royalsociety.org/2015/sound-interactions/}{``Royal Society Summer Science Exhibition 2015 - Sound Interactions''} event.
 }
 
 \textcolor{softcol}{\hrule}
 
 \cvevent{Oct.~2012~-Feb.~2013}{Research Assistant}{Technical University of Denmark (DK)}{
-Supervisor: \href{http://www.act.elektro.dtu.dk/about-us/contact_us}{Finn T. Agerkvist}  
+Supervisor: \href{http://www.act.elektro.dtu.dk/about-us/contact_us}{Finn T. Agerkvist}
 }
 {
-Project: 
-``Compensation of flux modulation 
+Project:
+``Compensation of flux modulation
 distortion using an additional coil
-in a loudspeaker unit'' 
-which resulted in a \href{http://google.com/patents/WO2015067591A1?cl=en}{patent application}. 
+in a loudspeaker unit''
+which resulted in a \href{http://google.com/patents/WO2015067591A1?cl=en}{patent application}.
 }
 \vspace{7pt}
 %---------------------------------------------------------------------------------------
@@ -465,24 +465,24 @@ which resulted in a \href{http://google.com/patents/WO2015067591A1?cl=en}{patent
 \textcolor{softcol}{\hrule}
 
 \cvevent{2013~-~2018}{PhD, KU Leuven}{Various institutions}{
-Relevant coursework: 
-Numerical Optimization (Prof. M. Diehl, KU Leuven), 
+Relevant coursework:
+Numerical Optimization (Prof. M. Diehl, KU Leuven),
 DREAMS Machine Learning School at Imperial London College (Prof. S. Theodorides et al.),
-DREAMS Advanced Psychoacoustic School at Aalborg Univeristy (Prof. T. Lokki et al.), 
+DREAMS Advanced Psychoacoustic School at Aalborg Univeristy (Prof. T. Lokki et al.),
 TEMPO Nonlinear Model Predictive Control School at University of Freiburg (Prof.J.B. Rawlings et al.),
-DISC Summer School 2018 Machine Learning for Control.  
-}{ 
+DISC Summer School 2018 Machine Learning for Control.
+}{
 Thesis title: ``
 Solving inverse problems in room acoustics using physical models, sparse regularization and numerical optimization
-''. 
+''.
 }
 
 \textcolor{softcol}{\hrule}
 
 \cvevent{2010~-~2012}{M.Sc, Engineering Acoustics}{Technical University of Denmark (DK)}{
 Relevant coursework: Advanced Acoustics, Acoustic Communication, Electroacoustic Transducers and Systems, Architectural Acoustics, Sound and Vibration, Partial Differential Equations
-}{ 
-Thesis title: ``Balanced Armature Transducers for Hi-fi Systems''. 
+}{
+Thesis title: ``Balanced Armature Transducers for Hi-fi Systems''.
 }
 
 \textcolor{softcol}{\hrule}
@@ -535,7 +535,7 @@ N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot, ``Sound fiel
 N. Antonello, F. T. Agerkvist, ``Compensation of the Flux Modulation Distortion Using an Additional Coil in a Loudspeaker Unit'', in Proc. AES 137th Int. Conv., Los Angeles, USA, Oct. 2014.
 \\[3pt]
 
-& \larrow{bgcol} 
+& \larrow{bgcol}
 {N. Antonello, T. van Waterschoot, M. Moonen, and P. A. Naylor},{ ``Identification of Surface Acoustic Impedances in a Reverberant Room Using the FDTD Method,''} in {\em Proc. 2014 Int. Workshop Acoustic Signal Enhancement (IWAENC 2014)}, Antibes, France, Sep. 2014 (candidate for best student paper award).
 \\[3pt]
 
@@ -545,7 +545,7 @@ N. Antonello, F. T. Agerkvist, ``Compensation of the Flux Modulation Distortion 
 \\[3pt]
 
 	\end{tabular*}
-	
+
 \textcolor{softcol}{\hrule}
 \cveventsingle{Patents}{}{ }{
 {F. T. Agerkvist, N. Antonello, and A. Christensen},``Loudspeaker assembly with suppression of magnetic flux modulation distortion,'' WO Patent App. PCT/EP2014/073 655, May 2015.
@@ -560,42 +560,42 @@ N. Antonello, F. T. Agerkvist, ``Compensation of the Flux Modulation Distortion 
 
 
 	\begin{tabular*}{1\textwidth}{p{0.3cm} p{16.4cm}}
-&		 \larrow{bgcol}  
+&		 \larrow{bgcol}
 {\bf StructuredOptimization.jl}
 Structured optimization in Julia. \hfill
 
-\href{https://github.com/kul-forbes/StructuredOptimization.jl}{https://github.com/kul-forbes/StructuredOptimization.jl} 
+\href{https://github.com/kul-forbes/StructuredOptimization.jl}{https://github.com/kul-forbes/StructuredOptimization.jl}
 \\[3pt]
-&		 \larrow{bgcol}  
+&		 \larrow{bgcol}
 {\bf AbstractOperators.jl}
 Abstract operators for large scale optimization in Julia. \hfill
 
 \href{https://github.com/kul-forbes/AbstractOperators.jl}{https://github.com/kul-forbes/AbstractOperators.jl}
 \\[3pt]
-&		 \larrow{bgcol}  
+&		 \larrow{bgcol}
 {\bf ProximalAlgorithms.jl}
 Proximal algorithms for nonsmooth optimization in Julia. \hfill
 
 \href{https://github.com/kul-forbes/ProximalAlgorithms.jl}{https://github.com/kul-forbes/ProximalAlgorithms.jl}
 \\[3pt]
-&		 \larrow{bgcol}  
+&		 \larrow{bgcol}
 {\bf ProximalOperators.jl} \hfill
 
 Julia package to compute the proximal operator of several functions commonly used in optimization algorithms like ADMM and (fast) proximal gradient methods.
 
 \href{https://github.com/kul-forbes/ProximalOperators.jl}{https://github.com/kul-forbes/ProximalOperators.jl}
 \\[3pt]
-&		 \larrow{bgcol}  
+&		 \larrow{bgcol}
 {\bf RIM.jl}
-Julia package for generating room acoustics impulse response using the Randomized Image Method (RIM). 
+Julia package for generating room acoustics impulse response using the Randomized Image Method (RIM).
 \href{https://github.com/nantonel/RIM.jl}{https://github.com/nantonel/RIM.jl}
 \\[3pt]
-&		 \larrow{bgcol}  
+&		 \larrow{bgcol}
 {\bf AcFdtd.jl}
 
 Julia package for 3D room acoustics simulations using Finite Difference Time Domain (FDTD) method.
 \href{https://github.com/nantonel/AcFdtd.jl}{https://github.com/nantonel/AcFdtd.jl}
-\\	
+\\
 	\end{tabular*}
 
 \newpage
@@ -606,7 +606,7 @@ Julia package for 3D room acoustics simulations using Finite Difference Time Dom
 
 \textcolor{softcol}{\hrule}
 \cvevent{Software}{}{}{
-{\bf Programming Languages: }{\em Proficient}: Julia, MATLAB, \LaTeX . {\em Familiar}: Python, C++, C, Java 
+{\bf Programming Languages: }{\em Proficient}: Julia, MATLAB, \LaTeX . {\em Familiar}: Python, C++, C, Java
 }
 {
 {\bf Others: }{unix-shell, vim}
@@ -614,7 +614,7 @@ Julia package for 3D room acoustics simulations using Finite Difference Time Dom
 
 \textcolor{softcol}{\hrule}
 \cvevent{Technical Skills}{}{}{{\bf Measurements}: experience with Br\"uel \& Kj\ae r  PULSE system analyzer, Klippel R\&D System and
-measuring room impulse responses/reverberation time.    
+measuring room impulse responses/reverberation time.
 }
 {
 {\bf Others}: soldering simple analog circuits, oscilloscope usage, (non)technical drawing.
@@ -623,7 +623,7 @@ measuring room impulse responses/reverberation time.
 
 \textcolor{softcol}{\hrule}
 \cvevent{Languages}{}{}{
-{\em Proficient}: Italian (Native), English 
+{\em Proficient}: Italian (Native), English
 }
 {
 {\em Elementary}: French
@@ -640,22 +640,22 @@ measuring room impulse responses/reverberation time.
 
 
 	\begin{tabular*}{1\textwidth}{p{0.3cm} p{16.4cm}}
-&		 \larrow{bgcol}  
+&		 \larrow{bgcol}
 Teaching Assistant at Toon van Waterschoot's Signals and Systems Exercise sessions course 2018/19 (KU Leuven - Groep T)
-\\[3pt]	
-&		 \larrow{bgcol}  
+\\[3pt]
+&		 \larrow{bgcol}
 Teaching Assistant at Koen Eneman Digital Signal Processing Exercise sessions course 2017/18 (KU Leuven - Groep T)
-\\[3pt]	
-&		 \larrow{bgcol}  
+\\[3pt]
+&		 \larrow{bgcol}
 Teaching Assistant at Toon van Waterschoot's Signals and Systems Exercise sessions course 2017/18 (KU Leuven - Groep T)
-\\[3pt]	
-&		 \larrow{bgcol}  
+\\[3pt]
+&		 \larrow{bgcol}
 Lecture: ``Sparsity, Regularization and Convex Optimization'' at Toon van Waterschoot's Advanced DSP topics 2 course (KU Leuven Geel) - 09/11/2016
 \\[3pt]
-&		 \larrow{bgcol}  
+&		 \larrow{bgcol}
 Teaching Assistant at Marc Moonen's DSP-CSI Laboratory sessions course 2013-2017 (KU Leuven)
 \\[3pt]
-&		 \larrow{bgcol}  
+&		 \larrow{bgcol}
 Teaching Assistant at Finn Jacobsen's Advance Acoustics Laboratory sessions course 2011-2012 (DTU)
 \\[3pt]
 	\end{tabular*}

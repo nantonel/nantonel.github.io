@@ -5,44 +5,34 @@ file = open("../../_pages/adelfi.md", "w")
 print(file,
 "---
 scope:
-permalink: \"\/adelfi\/\"
+permalink: \"/adelfi/\"
 type: pages
 values:
 layout: single
 classes: wide
 author_profile: false
 ---
-<script type=\"text\/javascript\" async
-  src=\"https:\/\/cdn.mathjax.org\/mathjax\/latest\/MathJax.js?config=TeX-MML-AM_CHTML\">
-<\/script>
-<style type=\"text\/css\">
+<script type=\"text/javascript\" async
+  src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML\">
+</script>
+<style type=\"text/css\">
 audio {
       width: 100px;
       }
-<\/style>
+</style>
 
 ## Joint acoustic localization and dereverberation by sound field interpolation
 
 ### Abstract
 
-Acoustic source localization and dereverberation are formulated jointly
-as an inverse problem.
-The inverse problem consists of the interpolation of the sound field measured by a set of microphones.
-The recorded sound pressure is matched with that of a particular acoustic model.
-This model is based on a collection of equivalent sources creating either spherical or plane waves.
-In order to achieve meaningful results, spatial, spatio-temporal and spatio-spectral sparsity can be promoted in the signals originating from the equivalent sources.
-The large-scale optimization problem
-resulting from the inverse problem formulation
-is solved using a first order matrix-free optimization algorithm combined with a weighted overlap-add procedure.
-It is shown that once the equivalent source signals capable of effectively interpolating the sound field are obtained, they can be readily used to localize a moving sound source in terms of direction of arrival (DOA) and to perform dereverberation in a highly reverberant environment.
-Results from simulation experiments and from real measurements show that the proposed algorithm is robust against both localized and diffuse noise exhibiting a noise reduction in the dereverberated signals.
+Acoustic source localization and dereverberation are formulated jointly as an inverse problem. The inverse problem consists of the interpolation of the sound field measured by a set of microphones. The recorded sound pressure is matched with that of a particular acoustic model based on a collection of plane waves arriving from different directions at the microphone positions. In order to achieve meaningful results, spatial and spatio-spectral sparsity can be promoted in the weight signals controlling the plane waves. The large-scale optimization problem resulting from the inverse problem formulation is solved using a first order optimization algorithm combined with a weighted overlap-add procedure. It is shown that once the weight signals capable of effectively interpolating the sound field are obtained, they can be readily used to localize a moving sound source in terms of direction of arrival (DOA) and to perform dereverberation in a highly reverberant environment. Results from simulation experiments and from real measurements show that the proposed algorithm is robust against both localized and diffuse noise exhibiting a noise reduction in the dereverberated signals.
 
 "
 )
 
 noises = ["sensor40", "diffuse10", "local15"]
-model = ["TESM","TESM","PWDM","PWDM","ADA"]
-reg   = [  "_l1", "_l21",  "_l1", "_l21", ""]
+model = ["ADELFI","ADELFI","SBL","ADA"]
+reg   = ["_l1", "_l21", "", ""]
 
 println(file,"## Index")
 println(file,"### Simulation results:")
@@ -51,6 +41,8 @@ println(file,"\n")
 top = "|  |"
 str = ""
 for i in eachindex(model)
+    global str
+    global top
     if reg[i] == "_l1"
         regLTX = "\$\$l_1\$\$"
     elseif reg[i] == "_l21"
@@ -58,7 +50,11 @@ for i in eachindex(model)
     else
         regLTX = ""
     end
-    str *= "| $(model[i]) $(regLTX) | "
+    if model[i] == "SBL"
+        str *= "| SBL (SS) | "
+    else
+        str *= "| $(model[i]) $(regLTX) | "
+    end
     for ii in eachindex(noises)
 
         if noises[ii] == "sensor40"
@@ -94,10 +90,10 @@ println(file,"\n\n Scenarios (D-E) involve moving sound source. \n\n")
 
 println(file,"\n### Legend:")
 println(file,"\n")
-println(file,"* \$\$ \\mathbf{s} \$\$ : (semi)-anechoic signal ")
-println(file,"* \$\$ \\tilde{\\mathbf{p}} \$\$ : microphone signal")
-println(file,"* \$\$ \\hat{\\mathbf{w}} \$\$ : dereverberated signal (single weight signal)")
-println(file,"* \$\$ \\hat{\\mathbf{p}}_D \$\$ : dereverberated signal (using multiple weight signal)")
+println(file,"* \$\$ \\mathbf{s}_t \$\$ : (semi)-anechoic signal ")
+println(file,"* \$\$ \\tilde{\\mathbf{p}}_t \$\$ : microphone signal")
+println(file,"* \$\$ \\bar{\\mathbf{w}}_t \$\$ : dereverberated signal (single weight signal)")
+println(file,"* \$\$ \\bar{\\mathbf{p}}_t \$\$ : dereverberated signal (using multiple weight signal)")
 
 
 println(file,"\n\n## Simulation results")
@@ -129,7 +125,7 @@ for i in eachindex(model)
 |:----------------:|:----------------:|:----------------:|:-----------------:|:-----------------:|:-----------------:|:-----------------:|
 ")
 
-    st = "| \$\$ \\mathbf{s} \$\$ |"
+    st = "| \$\$ \\mathbf{s}_t \$\$ |"
     for Nm in [4;8;12;16;20;24]
         path = "/assets/jsld/s.wav"
         st *="<audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)\"><a>play</a></audio> |" 
@@ -137,7 +133,7 @@ for i in eachindex(model)
 
     println(file,st)
 
-    st = "| \$\$ \\tilde{\\mathbf{p}} \$\$ |"
+    st = "| \$\$ \\tilde{\\mathbf{p}}_t \$\$ |"
     for Nm in [4;8;12;16;20;24]
         path = "/assets/adelfi/simulations/refs/p_Nm$(Nm)_$(noise).wav"
         st *="<audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)\"><a>play</a></audio> |" 
@@ -146,16 +142,24 @@ for i in eachindex(model)
     println(file,st)
 
     if model[i] == "ADA"
-        st = "| \$\$ \\hat{\\mathbf{p}}_D \$\$ |"
+        st = "| \$\$ \\bar{\\mathbf{p}}_t \$\$ |"
         for Nm in [4;8;12;16;20;24]
             path = "/assets/adelfi/simulations/$(model[i])/Nm$(Nm)$(reg[i])/$(noise)/d_ADA_r_m0.1_spherical.wav"
             st *="<audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)\"><a>play</a></audio> |" 
         end
 
         println(file,st)
+    elseif model[i] == "SBL"
+        st = "| \$\$ \\bar{\\mathbf{p}}_t \$\$ |"
+        for Nm in [4;8;12;16;20;24]
+            path = "/assets/adelfi/simulations/$(model[i])/Nm$(Nm)$(reg[i])/$(noise)/d_SBL_r_m0.1_spherical.wav"
+            st *="<audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)\"><a>play</a></audio> |" 
+        end
+
+        println(file,st)
     else
 
-        st = "| \$\$ \\hat{\\mathbf{w}} \$\$ |"
+        st = "| \$\$ \\bar{\\mathbf{w}}_t \$\$ |"
         for Nm in [4;8;12;16;20;24]
             path = "/assets/adelfi/simulations/$(model[i])/Nm$(Nm)$(reg[i])/$(noise)/w_Nw500_Nl512_r_m0.1_spherical.wav"
             st *="<audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)\"><a>play</a></audio> |" 
@@ -163,7 +167,7 @@ for i in eachindex(model)
 
         println(file,st)
 
-        st = "| \$\$ \\hat{\\mathbf{p}}_D \$\$ |"
+        st = "| \$\$ \\bar{\\mathbf{p}}_t \$\$ |"
         for Nm in [4;8;12;16;20;24]
             path = "/assets/adelfi/simulations/$(model[i])/Nm$(Nm)$(reg[i])/$(noise)/d_Nw500_Nl512_r_m0.1_spherical.wav"
             st *="<audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)\"><a>play</a></audio> |" 
@@ -178,6 +182,7 @@ end
 
 println(file,"\n\n## Measurement results")
 println(file,"\n\n")
+println(file,"\n\n Rigid baffle compensation of microphone signals was performed for ADELFI and SBL")
 
 rec  = [1;2;3;1;3]
 task = [1;1;1;3;3]
@@ -188,13 +193,11 @@ for ii in eachindex(scenario)
 
 path = "/assets/adelfi/LOCATA/task$(task[ii])/recording$(rec[ii])/$(mic_array)/"
 print(file,
-      "\n\n#### <a name=\"$(scenario[ii])\"></a> Scenario $(scenario[ii])\n\n")
-print(file,
-      "\n\n | \$\$ \\mathbf{s} \$\$ | <audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)s_Fs8000.wav\"><a>play</a></audio> |\n|:-:|:-:|\n| \$\$ \\tilde{\\mathbf{p}} \$\$ | <audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)p_Fs8000_eigenmike.wav\"><a>play</a></audio> | \n\n")
+      "\n\n | \$\$ \\mathbf{s}_t \$\$ | <audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)s_Fs8000.wav\"><a>play</a></audio> |\n|:-:|:-:|\n| \$\$ \\tilde{\\mathbf{p}}_t \$\$ | <audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)p_Fs8000_eigenmike.wav\"><a>play</a></audio> | \n\n")
 str = "| |"
 mid = "|:-:|"
-pd   = "|\$\$ \\hat{\\mathbf{p}}_D  \$\$  | "
-pw   = "|\$\$ \\hat{\\mathbf{w}}    \$\$  | "
+pd   = "|\$\$ \\bar{\\mathbf{p}}_t  \$\$  | "
+pw   = "|\$\$ \\bar{\\mathbf{w}}_t  \$\$  | "
 for i in eachindex(model)
     if reg[i] == "_l1"
         regLTX = "\$\$l_1\$\$"
@@ -203,22 +206,24 @@ for i in eachindex(model)
     else
         regLTX = ""
     end
-    if model[i] == "TESM"
-        pdfilename = "d_Fs8000_Nw500_Nl512_model_AcousticOperators.TESM_reg$(reg[i])_eigenmike.wav"
-        wfilename =  "w_Fs8000_Nw500_Nl512_model_AcousticOperators.TESM_reg$(reg[i])_eigenmike.wav"
-    elseif model[i] == "PWDM"
-        pdfilename = "d_Fs8000_Nw500_Nl512_model_AcousticOperators.PW_reg$(reg[i])_eigenmike.wav"
-        wfilename = "w_Fs8000_Nw500_Nl512_model_AcousticOperators.PW_reg$(reg[i])_eigenmike.wav"
+    if model[i] == "ADELFI"
+        pdfilename = "d_Fs8000_Nw500_Nl512_model_PW_reg$(reg[i])_eigenmikenosph.wav"
+        wfilename =  "w_Fs8000_Nw500_Nl512_model_PW_reg$(reg[i])_eigenmikenosph.wav"
     elseif model[i] == "ADA"
         pdfilename = "d_Fs8000_eigenmike_ADA.wav"
+    elseif model[i] == "SBL"
+        pdfilename = "w_Fs8000_Nw500_Nl512_SBL_eigenmikenosph.wav"
     end
-    str *= " $(model[i]) $(regLTX) | "
-    mid *= ":-:| "
-    pd  *= "<audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)$(pdfilename)\"><a>play</a></audio> |"
-    if model[i] == "ADA"
-    pw  *= " |"
+    if model[i] == "SBL" && task[ii] == 3
     else
-    pw  *= "<audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)$(wfilename)\"><a>play</a></audio> |"
+        str *= " $(model[i]) $(regLTX) | "
+        mid *= ":-:| "
+        pd  *= "<audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)$(pdfilename)\"><a>play</a></audio> |"
+        if model[i] == "ADA" || model[i] == "SBL"
+        pw  *= " |"
+        else
+        pw  *= "<audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)$(wfilename)\"><a>play</a></audio> |"
+        end
     end
 
 end
