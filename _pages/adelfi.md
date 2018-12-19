@@ -195,7 +195,8 @@ Acoustic source localization and dereverberation are formulated jointly as an in
 
 
 
- Rigid baffle compensation of microphone signals was performed for ADELFI and SBL
+#### <a name="A"></a> Scenario A
+
 
 
  | $$ \mathbf{s}_t $$ | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording1/eigenmike/s_Fs8000.wav"><a>play</a></audio> |
@@ -208,6 +209,10 @@ Acoustic source localization and dereverberation are formulated jointly as an in
 |$$ \bar{\mathbf{p}}_t  $$  | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording1/eigenmike/d_Fs8000_Nw500_Nl512_model_PW_reg_l1_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording1/eigenmike/d_Fs8000_Nw500_Nl512_model_PW_reg_l21_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording1/eigenmike/w_Fs8000_Nw500_Nl512_SBL_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording1/eigenmike/d_Fs8000_eigenmike_ADA.wav"><a>play</a></audio> |
 
 
+#### <a name="B"></a> Scenario B
+
+
+
  | $$ \mathbf{s}_t $$ | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording2/eigenmike/s_Fs8000.wav"><a>play</a></audio> |
 |:-:|:-:|
 | $$ \tilde{\mathbf{p}}_t $$ | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording2/eigenmike/p_Fs8000_eigenmike.wav"><a>play</a></audio> | 
@@ -216,6 +221,10 @@ Acoustic source localization and dereverberation are formulated jointly as an in
 |:-:|:-:| :-:| :-:| :-:| 
 |$$ \bar{\mathbf{w}}_t  $$  | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording2/eigenmike/w_Fs8000_Nw500_Nl512_model_PW_reg_l1_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording2/eigenmike/w_Fs8000_Nw500_Nl512_model_PW_reg_l21_eigenmikenosph.wav"><a>play</a></audio> | | |
 |$$ \bar{\mathbf{p}}_t  $$  | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording2/eigenmike/d_Fs8000_Nw500_Nl512_model_PW_reg_l1_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording2/eigenmike/d_Fs8000_Nw500_Nl512_model_PW_reg_l21_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording2/eigenmike/w_Fs8000_Nw500_Nl512_SBL_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording2/eigenmike/d_Fs8000_eigenmike_ADA.wav"><a>play</a></audio> |
+
+
+#### <a name="C"></a> Scenario C
+
 
 
  | $$ \mathbf{s}_t $$ | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording3/eigenmike/s_Fs8000.wav"><a>play</a></audio> |
@@ -228,6 +237,10 @@ Acoustic source localization and dereverberation are formulated jointly as an in
 |$$ \bar{\mathbf{p}}_t  $$  | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording3/eigenmike/d_Fs8000_Nw500_Nl512_model_PW_reg_l1_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording3/eigenmike/d_Fs8000_Nw500_Nl512_model_PW_reg_l21_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording3/eigenmike/w_Fs8000_Nw500_Nl512_SBL_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task1/recording3/eigenmike/d_Fs8000_eigenmike_ADA.wav"><a>play</a></audio> |
 
 
+#### <a name="D"></a> Scenario D
+
+
+
  | $$ \mathbf{s}_t $$ | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task3/recording1/eigenmike/s_Fs8000.wav"><a>play</a></audio> |
 |:-:|:-:|
 | $$ \tilde{\mathbf{p}}_t $$ | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task3/recording1/eigenmike/p_Fs8000_eigenmike.wav"><a>play</a></audio> | 
@@ -236,6 +249,10 @@ Acoustic source localization and dereverberation are formulated jointly as an in
 |:-:|:-:| :-:| :-:| 
 |$$ \bar{\mathbf{w}}_t  $$  | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task3/recording1/eigenmike/w_Fs8000_Nw500_Nl512_model_PW_reg_l1_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task3/recording1/eigenmike/w_Fs8000_Nw500_Nl512_model_PW_reg_l21_eigenmikenosph.wav"><a>play</a></audio> | |
 |$$ \bar{\mathbf{p}}_t  $$  | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task3/recording1/eigenmike/d_Fs8000_Nw500_Nl512_model_PW_reg_l1_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task3/recording1/eigenmike/d_Fs8000_Nw500_Nl512_model_PW_reg_l21_eigenmikenosph.wav"><a>play</a></audio> |<audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task3/recording1/eigenmike/d_Fs8000_eigenmike_ADA.wav"><a>play</a></audio> |
+
+
+#### <a name="E"></a> Scenario E
+
 
 
  | $$ \mathbf{s}_t $$ | <audio controls="controls" type="audio/wav" src="/assets/adelfi/LOCATA/task3/recording3/eigenmike/s_Fs8000.wav"><a>play</a></audio> |

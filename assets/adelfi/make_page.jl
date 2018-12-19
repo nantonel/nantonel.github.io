@@ -182,7 +182,6 @@ end
 
 println(file,"\n\n## Measurement results")
 println(file,"\n\n")
-println(file,"\n\n Rigid baffle compensation of microphone signals was performed for ADELFI and SBL")
 
 rec  = [1;2;3;1;3]
 task = [1;1;1;3;3]
@@ -192,6 +191,8 @@ mic_array = "eigenmike"
 for ii in eachindex(scenario)
 
 path = "/assets/adelfi/LOCATA/task$(task[ii])/recording$(rec[ii])/$(mic_array)/"
+print(file,
+      "\n\n#### <a name=\"$(scenario[ii])\"></a> Scenario $(scenario[ii])\n\n")
 print(file,
       "\n\n | \$\$ \\mathbf{s}_t \$\$ | <audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)s_Fs8000.wav\"><a>play</a></audio> |\n|:-:|:-:|\n| \$\$ \\tilde{\\mathbf{p}}_t \$\$ | <audio controls=\"controls\" type=\"audio/wav\" src=\"$(path)p_Fs8000_eigenmike.wav\"><a>play</a></audio> | \n\n")
 str = "| |"
