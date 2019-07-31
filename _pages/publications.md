@@ -11,7 +11,7 @@ author_profile: true
 * **Journal Papers**
 
   * N. Antonello, E. De Sena, M. Moonen, P. A. Naylor and T. van Waterschoot,
-    "[Joint acoustic localization and dereverberation by sound field interpolation](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/18-83.pdf)", submitted for publication, June 2018. [[audio samples]](/adelfi/)
+    "[Joint acoustic localization and dereverberation through plane wave decomposition and sparse regularization](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/18-83.pdf)", to appear 2019. [[audio samples]](/adelfi/)
 
   * N. Antonello, L. Stella, P. Patrinos and T. van Waterschoot,
     "[Proximal gradient algorithms: applications in signal processing](https://arxiv.org/abs/1803.01621)", arXiv:1803.01621, Mar. 2018.
@@ -24,7 +24,8 @@ author_profile: true
 
 
 * **Conference Papers**
-    * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot, "[Joint source localization and dereverberation by sound field interpolation using sparse regularization](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/17-163.pdf)," in Proc. IEEE Int. Conf. on Acoust. Speech and Signal Process. (ICASSP-18), Calgary, Canada, Apr. 2018. [[audio samples]](/jsld/)
+    * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot, 
+    "[Joint source localization and dereverberation by sound field interpolation using sparse regularization](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/17-163.pdf)," in Proc. IEEE Int. Conf. on Acoust. Speech and Signal Process. (ICASSP-18), Calgary, Canada, Apr. 2018. [[audio samples]](/jsld/)
     
     * N. Antonello, E. De Sena, M. Moonen, P. Naylor, T. van Waterschoot,
     "[Sound field control in a reverberant room using the Finite Difference Time Domain method](ftp://ftp.esat.kuleuven.be/pub/SISTA/nantonel/15-124.pdf),"

@@ -103,8 +103,8 @@ author:
   name             : "Niccoló Antonello"
   avatar           : "/assets/images/yo2.png"
   bio              : 
-  location         : "KU Leuven (Belgium)"
-  email            : "niccolo.antonello@esat.kuleuven.be"
+  location         : 
+  email            : "niccolo.antonello@idiap.ch"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
   bitbucket        :

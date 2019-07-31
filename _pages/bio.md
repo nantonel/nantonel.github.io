@@ -22,4 +22,4 @@ author_profile: true
   ["Dereverberation and Reverberation of Audio, Music, and Speech (DREAMS)"](http://www.dreams-itn.eu/).
 
 
-  His research interests include room acoustics, inverse problems and numerical optimization.
+  His research interests include room acoustics, inverse problems, numerical optimization and speech recognition.
