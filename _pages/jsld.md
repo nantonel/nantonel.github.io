@@ -16,11 +16,11 @@ audio {
       }
 </style>
 
-## Joint source localization and dereverberation by sound field interpolation using sparse regularization
+## Joint acoustic localization and dereverberation through plane wave decomposition and sparse regularization
 
 ### Abstract
 
-In this paper, source localization and dereverberation are formulated jointly as an inverse problem. The inverse problem consists in the interpolation of the sound field measured by a set of microphones by matching the recorded sound pressure with that of a particular acoustic model. This model is based on a collection of equivalent sources creating either spherical or plane waves. In order to achieve meaningful results, spatial, spatio-temporal and spatio-spectral sparsity can be promoted in the signals originating from the equivalent sources. The inverse problem consists of a large-scale optimization problem that is solved using a first order matrix-free optimization algorithm. It is shown that once the equivalent source signals capable of effectively interpolating the sound field are obtained, they can be readily used to localize a speech sound source in terms of Direction of Arrival (DOA) and to perform dereverberation in a highly reverberant environment.
+Acoustic source localization and dereverberation are formulated jointly as an inverse problem. The inverse problem consists of the approximation of the sound field measured by a set of microphones. The recorded sound pressure is matched with that of a particular acoustic model based on a collection of plane waves arriving from different directions at the microphone positions. In order to achieve meaningful results, spatial and spatio-spectral sparsity can be promoted in the weight signals controlling the plane waves. The large-scale optimization problem resulting from the inverse problem formulation is solved using a first order optimization algorithm combined with a weighted overlap-add procedure. It is shown that once the weight signals capable of effectively approximating the sound field are obtained, they can be readily used to localize a moving sound source in terms of direction of arrival (DOA) and to perform dereverberation in a highly reverberant environment. Results from simulation experiments and from real measurements show that the proposed algorithm is robust against both localized and diffuse noise exhibiting a noise reduction in the dereverberated signals.
 
 ### Audio Samples
 
