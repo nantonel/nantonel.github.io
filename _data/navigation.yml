@@ -2,8 +2,6 @@
 main:
   - title: "CV"
     url: "/assets/docs/cv.pdf"
-  - title: "Bio"
-    url: "/bio/"
   - title: "Publications"
     url: "/publications/"
   - title: "Software"
