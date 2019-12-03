@@ -13,8 +13,6 @@ author_profile: true
   * N. Antonello, E. De Sena, M. Moonen, P. A. Naylor and T. van Waterschoot,
     "[Joint acoustic localization and dereverberation through plane wave decomposition and sparse regularization](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/18-83.pdf)", IEEE/ACM Transactions of Audio, Speech Language Processing, vol. 27, no. 12, pp. 1893-1905, Dec. 2019. [[audio samples]](/adelfi/)
 
-  * N. Antonello, L. Stella, P. Patrinos and T. van Waterschoot,
-    "[Proximal gradient algorithms: applications in signal processing](https://arxiv.org/abs/1803.01621)", arXiv:1803.01621, Mar. 2018.
 
   * N. Antonello, E. De Sena, M. Moonen, P. A. Naylor and T. van Waterschoot,
     "[Room impulse response interpolation using a sparse spatio-temporal representation of the sound field](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/17-26.pdf)", IEEE/ACM Transactions of Audio, Speech Language Processing, vol. 25, no. 10, pp. 1929-1941, Oct. 2017.
@@ -44,6 +42,11 @@ author_profile: true
     * N. Antonello, T. van Waterschoot, M. Moonen, and P. Naylor,
     "[Source Localization and Signal Reconstruction in a Reverberant Field Using the FDTD Method](ftp://ftp.esat.kuleuven.be/pub/SISTA/nantonel/14-38.pdf)",
     in Proc. 22nd European Signal Process. Conf. (EUSIPCO 2014), Lisbon, Portugal, Sep. 2014.
+
+* **arXiv**
+
+  * N. Antonello, L. Stella, P. Patrinos and T. van Waterschoot,
+    "[Proximal gradient algorithms: applications in signal processing](https://arxiv.org/abs/1803.01621)", arXiv:1803.01621, Mar. 2018.
 
 
 * **PhD Thesis**
