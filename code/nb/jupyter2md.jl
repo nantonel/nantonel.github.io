@@ -11,7 +11,13 @@ md = split(ipynb, ".")[1]
 
 file = read("$md.md",String)
 
-scripts="<script type=\"text/javascript\" async 
+scripts="---
+layout: single
+classes: wide
+author_profile: false
+---
+
+<script type=\"text/javascript\" async 
   src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML\">
 </script>
 <style type=\"text/css\"> 
