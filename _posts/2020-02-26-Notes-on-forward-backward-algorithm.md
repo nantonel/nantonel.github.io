@@ -346,7 +346,7 @@ Similar stuff happens for $$\bar{\beta}_t(j) = c_t^{-1} \sum_{k=1}^{N_s} \bar{\b
 Posterior probabilities are then given by:
 
 $$
-\gamma_{t}(j) = \alpha_{t}(j) \beta_{t}(j) = p(s_t = j | \mathbf{y}) 
+\gamma_{t}(j) = \bar{\alpha}_{t}(j) \bar{\beta}_{t}(j) = p(s_t = j | \mathbf{y}) 
 $$
 
 They give the probability of being at state $$j$$ given the future and past observations.
