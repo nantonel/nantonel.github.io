@@ -11,25 +11,31 @@ author_profile: false
 audio {width: 100px;}
 </style>
 
-These are some notes on the Forward-Backward algorithm. They make sense to me, hopefully they will make sense to some others. Code is written in Julia language but should be as simple as pseudo-code.
+These are some notes on the Forward-Backward algorithm for Hidden Markov Models (HMMs). The focus of this post is on the derivations and on the variations of these algorithms. When possible I try to give an interpretation of the probabilities involved. 
 
-## Markov model  definitions
+Some basic understanding of HMMs is probably needed before reading this text. Reference [[1]](#1) provides a in-depth introduction and good resources are available also online for example on Wikipedia's webpages on [HMMs](https://en.wikipedia.org/wiki/Hidden_Markov_model) and [forward-backward algorithms](https://en.wikipedia.org/wiki/Forward–backward_algorithm). 
 
-We assume the state $$s_j \in \mathcal{N}$$ is defined as an integer.
-A state sequence is defined as $$\mathbf{s} \in \mathcal{N}^{N_t}$$, where $$N_t$$ is the number of time steps.
-We assume a finite number of states $$N_s$$. 
-The Hidden Markov Model (HMM) are defined as $$ \lambda = \{\mathbf{A}, \mathbf{a}, \mathcal{B}  \}$$.
-Here $$\mathbf{A} \in \mathcal{R}^{N_s \times N_s}$$ transition matrix where $$p(s_t=j|s_{t-1}=i)= a_{ij}$$ with $$a_{ij}$$ is the $$(i,j)$$ element of $$\mathbf{A}$$.
-This means that we ahve a Markov process of order 1.    
-$$ \mathbf{a} \in \mathcal{R}^{N_s} $$ are the initial state distributions.
-$$\mathcal{B} = \{ b_1, \dots b_{N_s} \}$$ are a set of distributions, one per state where $$p(y_t|s_j)=b_{s_j}(y_t)$$ (Observation independence, memoryless model) where $$y_t$$ is the observation at the time $$t$$. 
+Here some code snippets are shown. They are written in the Julia language and should be very readable, as simple as pseudo-code.
+
+## Hidden Markov model notation
+
+The states of a Hidden Markov Model (HMM) $$s_j \in \mathcal{N}$$ for $$j=1,\dots,N_s$$ are defined as integers.
+A state sequence is the vector $$\mathbf{s} \in \mathcal{N}^{N_t}$$, where $$N_t$$ is the number of time steps.
+
+
+The parameters of the HMM are defined in $$ \lambda = \{\mathbf{A}, \mathbf{a}, \mathcal{B}  \}$$.
+
+
+Here $$\mathbf{A} \in \mathcal{R}^{N_s \times N_s}$$ transition matrix where $$p(s_t=j|s_{t-1}=i)= a_{ij}$$ with $$a_{ij}$$ being the $$(i,j)$$-th element of $$\mathbf{A}$$ (Markov process of order 1) and 
+$$\mathbf{a} \in \mathcal{R}^{N_s}$$ are the initial state distributions.
+$$\mathcal{B} = \{ b_1, \dots b_{N_s} \}$$ are a set of distributions, one per state where $$p(y_t|s_j)=b_{s_j}(y_t)$$ (observation independence, memoryless model) where $$y_t$$ is the observation at the time $$t$$. 
 
 
 ```julia
 using Distributions, LinearAlgebra, Combinatorics
 
 # define Markov model's parameters (λ)
-Ns = 2           # number of states
+Ns = 2          # number of states
 a = [0.5; 0.5]  # initial state probability  
 A = [0.7 0.3; 0.3 0.7] # transmission Matrix  [a_11 a21; a12 a_22]
 # Must be row stotastic: [sum(A[i,:]) for i in 1:size(A,1)] .== 1
@@ -58,33 +64,34 @@ $$ p_{\lambda} (\mathbf{y} | \mathbf{s} ) $$ is the likelihood of observation gi
 $$ p( \mathbf{s} ) $$ is probability of a particular state sequence and
 $$ \mathcal{S} $$ is the set of all possible state sequences.  
 
-Why do we need to compute $$p_{\lambda}(\mathbf{y})$$? 
-One reason is to learn the parameters $$\lambda$$ (training) for a given set of examples.
+Obtaining $$p_{\lambda}(\mathbf{y})$$ is necessary in different circumstances, for example when learning the parameters $$\lambda$$.
 
 In this case we want to maximize $$p_{\lambda}(\mathbf{y})$$:
 
-$$\lambda^* = \arg \min _{\lambda} -p_{\lambda} (\mathbf{y})$$
+$$\lambda^\star = \arg \max _{\lambda} p_{\lambda} (\mathbf{y})$$
 
-where $$\lambda^*$$ is the set of parameters such that a local minimum is reached.
-Notice that this is an example of _unsupervised learning_. There is no labelled data.
+where $$\lambda^\star$$ is the set of parameters such that a local maximum is reached.
+Notice that this is an example of _unsupervised learning_, i.e. there is no labelled data.
 
-This problem is generally a nonconvex problem: typically the _Expectation–maximization (EM) algorithm_ is used.
+This problem is generally a nonconcave (nonconvex) problem. Typically the _expectation–maximization (EM) algorithm_ is used to solve this optimization problem.
 
 A simplified summary of EM algorithm is the following:
   0. start from an initial guess of $$\lambda^0$$, $$k = 0$$
-  1. find a convex approximation (auxiliary function) of $$-p_\lambda(\mathbf{y})$$, call it $$ Q(\lambda, \lambda^{k}) $$
-  2. solve $$\lambda^{k+1} = \arg \min Q(\lambda, \lambda^{k})$$ 
+  1. find a concave approximation (auxiliary function) of $$p_\lambda(\mathbf{y})$$, call it $$ Q(\lambda, \lambda^{k}) $$
+  2. solve $$\lambda^{k+1} = \arg \max_{\lambda} Q(\lambda, \lambda^{k})$$ 
   3. check if stopping criteria is reached otherwise $$k \leftarrow k+1$$ and go to 1
 
-More information about the EM algorithm can be found in [1].
+More information about the EM algorithm can be found in [[2]](#2).
   
-Solving the optimization problem of point $$2$$ can done efficiently by computing the forward-backward algorithm.
+Solving the optimization problem of point $$2$$ can performed efficiently using the forward-backward algorithm.
 
-But first let's have a look at a brute force approach for computing $$p_\lambda(\mathbf{y})$$
+Let's first have a look at the simplest approach for computing $$p_\lambda(\mathbf{y})$$
 to start with a baseline.
 
 We can compute $$p_\lambda ( \mathbf{y} )$$ using brute force, 
-i.e. for all of the elements of $$\mathcal{S}$$, what we need is 
+i.e. for all of the elements of $$\mathcal{S}$$. 
+
+What we need is 
 $$p_\lambda (\mathbf{y} | \mathbf{s} ) = \prod_{t = 1}^{N_t} b_{s_t} (y_t)$$ where $$y_t$$ is the $$t$$-th element of $$\mathbf{y}$$ (observation independence) and
 $$P_\lambda (\mathbf{s}) = a_{s_0} \prod_{t = 1}^T a_{s_{t-1},s_t}$$ where 
 $$a_{s_0}$$ is the $$s_0$$-th element of $$\mathbf{a}$$ and 
@@ -272,7 +279,7 @@ Baum's forward and backward algorithms suffer of underflow:
 as $$N_t$$ increases $$\alpha_{N_t} (j) \rightarrow 0$$ $$\beta_1 (j) \rightarrow 0$$.
 Additionally only likelihoods are calculated.
 
-In what follows we show that it is possible to solve the underflow issue and actually obtain _posterior probabilities_.
+In what follows we show that it is possible to solve the underflow issue and actually obtain _posterior probabilities_ [[3]](#3).
 
 Posterior probability is defined as:
 
@@ -347,8 +354,8 @@ They give the probability of being at state $$j$$ given the future and past obse
 
 ### References
 
-[1] Liporace, L. "Maximum likelihood estimation for multivariate observations of Markov sources." IEEE Transactions on Information Theory 28.5 (1982): 729-734.
+<a name="1"></a>[1] Bilmes, Jeff A. "A gentle tutorial of the EM algorithm and its application to parameter estimation for Gaussian mixture and hidden Markov models." International Computer Science Institute 4.510 (1998): 126.
 
-[2] Devijver, Pierre A. "Baum's forward-backward algorithm revisited." Pattern Recognition Letters 3.6 (1985): 369-373.
+<a name="2"></a>[2] Liporace, L. "Maximum likelihood estimation for multivariate observations of Markov sources." IEEE Transactions on Information Theory 28.5 (1982): 729-734.
 
-[3] Bilmes, Jeff A. "A gentle tutorial of the EM algorithm and its application to parameter estimation for Gaussian mixture and hidden Markov models." International Computer Science Institute 4.510 (1998): 126.
+<a name="3"></a>[3] Devijver, Pierre A. "Baum's forward-backward algorithm revisited." Pattern Recognition Letters 3.6 (1985): 369-373.
