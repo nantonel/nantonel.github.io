@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "mint"
 locale                   : "en"
 title                    : "nantonel.github.io"
 title_separator          : "-"
-name                     : "Niccoló Antonello"
+name                     : "Niccolò Antonello"
 description              : 
 url                      : "https://nantonel.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
