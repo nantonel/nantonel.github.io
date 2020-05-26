@@ -10,7 +10,6 @@ author_profile: false
 <style type="text/css"> 
 audio {width: 100px;}
 </style>
-
 These are some notes on the Forward-Backward algorithm for Hidden Markov Models (HMMs). The focus of this post is on the derivations and on the variations of these algorithms. When possible I try to give an interpretation of the probabilities involved. 
 
 Some basic understanding of HMMs is probably needed before reading this text. Reference [[1]](#1) provides a in-depth introduction and good resources are available also online for example on Wikipedia's webpages on [HMMs](https://en.wikipedia.org/wiki/Hidden_Markov_model) and [forward-backward algorithms](https://en.wikipedia.org/wiki/Forward–backward_algorithm). 
@@ -27,8 +26,8 @@ The parameters of the HMM are defined in $$ \lambda = \{\mathbf{A}, \mathbf{a}, 
 
 
 Here $$\mathbf{A} \in \mathcal{R}^{N_s \times N_s}$$ transition matrix where $$p(s_t=j|s_{t-1}=i)= a_{ij}$$ with $$a_{ij}$$ being the $$(i,j)$$-th element of $$\mathbf{A}$$ (Markov process of order 1) and 
-$$\mathbf{a} \in \mathcal{R}^{N_s}$$ are the initial state distributions.
-$$\mathcal{B} = \{ b_1, \dots b_{N_s} \}$$ are a set of distributions, one per state where $$p(y_t|s_j)=b_{s_j}(y_t)$$ (observation independence, memoryless model) where $$y_t$$ is the observation at the time $$t$$. 
+$$\mathbf{a} \in \mathcal{R}^{N_s}$$ are the initial state probability.
+$$\mathcal{B} = \{ b_1, \dots b_{N_s} \}$$ are a set of distributions, one per state where $$p(y_t|s_j)=b_{j}(y_t)$$ (observation independence, memoryless model) where $$y_t$$ is the observation at the time $$t$$. 
 
 
 ```julia
@@ -60,9 +59,9 @@ $$p_\lambda ( \mathbf{y} ) =
 \sum_{\mathbf{s} \in \mathcal{S}} p_{\lambda} (\mathbf{y} | \mathbf{s} ) p( \mathbf{s} ) $$
 
 where
-$$ p_{\lambda} (\mathbf{y} | \mathbf{s} ) $$ is the likelihood of observation given a state sequence,
+$$ p_{\lambda} (\mathbf{y} | \mathbf{s} ) $$ is the likelihood of observation given a state sequence $$\mathbf{s} \in \mathcal{N}^{N_t}$$,
 $$ p( \mathbf{s} ) $$ is probability of a particular state sequence and
-$$ \mathcal{S} $$ is the set of all possible state sequences.  
+$$ \mathcal{S} $$ is a set containing all possible state sequences.  
 
 Obtaining $$p_{\lambda}(\mathbf{y})$$ is necessary in different circumstances, for example when learning the parameters $$\lambda$$.
 
@@ -71,12 +70,11 @@ In this case we want to maximize $$p_{\lambda}(\mathbf{y})$$:
 $$\lambda^\star = \arg \max _{\lambda} p_{\lambda} (\mathbf{y})$$
 
 where $$\lambda^\star$$ is the set of parameters such that a local maximum is reached.
-Notice that this is an example of _unsupervised learning_, i.e. there is no labelled data.
 
-This problem is generally a nonconcave (nonconvex) problem. Typically the _expectation–maximization (EM) algorithm_ is used to solve this optimization problem.
+This problem is generally a nonconcave (nonconvex) problem. Typically an _expectation–maximization (EM) procedure_ is used to solve this optimization problem.
 
 A simplified summary of EM algorithm is the following:
-  0. start from an initial guess of $$\lambda^0$$, $$k = 0$$
+  0. start from an initial guess of $$\lambda^0$$ and iteration $$k = 0$$
   1. find a concave approximation (auxiliary function) of $$p_\lambda(\mathbf{y})$$, call it $$ Q(\lambda, \lambda^{k}) $$
   2. solve $$\lambda^{k+1} = \arg \max_{\lambda} Q(\lambda, \lambda^{k})$$ 
   3. check if stopping criteria is reached otherwise $$k \leftarrow k+1$$ and go to 1
@@ -154,7 +152,7 @@ and drop the dependence of $$\{ y_1, \dots, y_t \}$$ in the conditional likeliho
 We can now define the two terms of the product as:
 
 * $$\alpha_j(t) =  p_{\lambda} (y_1, \dots, y_t, s_t = j)$$
-* $$\beta_j (t) = p_{\lambda} (y_{t+1} \dots y_{T} | s_t = j)$$
+* $$\beta_j (t) = p_{\lambda} (y_{t+1} \dots y_{N_t} | s_t = j)$$
 
 We need to manipulate $$\alpha_j(t)$$ as follows: 
 
@@ -178,13 +176,13 @@ $$ dropping terms due to Markov order and observation independence
 
 To summarize:
 
-$$\alpha_t(j) = \sum_{i=1}^S \alpha_{t-1}(i) a_{ij} b_j(y_t) $$ for $$t = 1, \dots, N_t$$, $$j = 1, \dots, N_s$$
+$$\alpha_t(j) = \sum_{i=1}^{N_s} \alpha_{t-1}(i) a_{ij} b_j(y_t) $$ for $$t = 1, \dots, N_t$$, $$j = 1, \dots, N_s$$
 
-and set $$\alpha_0 (j) = a_j$$ for $$j = 1, \dots, Ns$$
+and set $$\alpha_0 (j) = a_j$$ for $$j = 1, \dots, N_s$$
 
-Notice that $$\alpha_j(T) = p_{\lambda} (y_1, \dots, y_T, s_T = j)$$, comparing this with the definition of $$p_\lambda(\mathbf{y})$$:
+Notice that $$\alpha_j(N_t) = p_{\lambda} (y_1, \dots, y_T, s_{N_t} = j)$$, comparing this with the definition of $$p_\lambda(\mathbf{y})$$:
 
-$$p_\lambda(\mathbf{y}) = \sum_{j = 1}^S \alpha_{N_t} (j)$$
+$$p_\lambda(\mathbf{y}) = \sum_{j = 1}^{N_s} \alpha_{N_t} (j)$$
 
 Meaning that the forward algorithm can be used to compute value of the cost function.
  
@@ -220,13 +218,13 @@ println(sum(alpha[end,:]))
 
 We can also compute   
 
-$$\beta_j (t) = p_{\lambda} (y_{t+1} \dots y_{T} | s_t = j)$$
+$$\beta_j (t) = p_{\lambda} (y_{t+1} \dots y_{N_t} | s_t = j)$$
 
 in a similar fashion.
 
 By applying similar tricks as before it turns out that by setting
 
-$$\beta_j(T) = 1 \ \forall j = 1, \dots, N_s$$ 
+$$\beta_j(N_t) = 1 \ \forall j = 1, \dots, N_s$$ 
 
 $$\beta_j(t)$$ can be compute going back through time (backwards):
 
@@ -265,7 +263,7 @@ sum(alpha.*beta,dims=2)
 
 
     5×1 Array{Float64,2}:
-     0.0343037005        
+     0.0343037005
      0.034303700500000006
      0.034303700500000006
      0.034303700500000006
@@ -283,12 +281,12 @@ In what follows we show that it is possible to solve the underflow issue and act
 
 Posterior probability is defined as:
 
-$$p_{\lambda}(s_t = j | y_1, \dots, y_t) = p_\lambda(s_t = j, y_1, \dots, y_T) / p(\mathbf{y})$$
+$$p_{\lambda}(s_t = j | y_1, \dots, y_t) = p_\lambda(s_t = j, y_1, \dots, y_{N_t}) / p(\mathbf{y})$$
 
 we can split denominator and numerator as before:
 
 $$\left( p_\lambda(s_t = j, y_1, \dots y_t) \cdot p_\lambda(y_1, \dots y_t | s_t = j) \right) /
- \left( p(y_1, \dots, y_t) p(y_{t+1} \dots y_{T} | y_1, \dots, y_t)  \right)
+ \left( p(y_1, \dots, y_t) p(y_{t+1} \dots y_{N_t} | y_1, \dots, y_t)  \right)
 $$
 
 then we have:
@@ -298,7 +296,7 @@ $$
   * can be interpreted the probability of being at state $$j$$ given observations up to $$t$$.
 
 * $$
-\bar{\beta}_t(j) = p_\lambda(y_1, \dots y_t | s_t = j) /  p(y_{t+1} \dots y_{T} | y_1, \dots, y_t)
+\bar{\beta}_t(j) = p_\lambda(y_1, \dots y_t | s_t = j) /  p(y_{t+1} \dots y_{N_t} | y_1, \dots, y_t)
 $$
   * has a more difficult interpretation
 
