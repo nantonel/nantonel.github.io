@@ -145,7 +145,7 @@ $$p_\lambda (\mathbf{y}) = \sum_{j = 1}^{N_s} p_{\lambda} (\mathbf{y}, s_t = j),
 using the conditional probability definition we can further decompose the summand into: 
 
 $$ p_{\lambda} (\mathbf{y},s_t = j) =  
-p_{\lambda} (y_1, \dots, y_t, s_t = j) \cdot p_{\lambda} (y_{t+1} \dots y_{T} | y_1, \dots, y_t, s_t = j) $$
+p_{\lambda} (y_1, \dots, y_t, s_t = j) \cdot p_{\lambda} (y_{t+1} \dots y_{N_t} | y_1, \dots, y_t, s_t = j) $$
 
 and drop the dependence of $$\{ y_1, \dots, y_t \}$$ in the conditional likelihood since it is independent of previous states (observation independence).
 
