@@ -1,7 +1,6 @@
 ---
-layout: single
-classes: wide
-author_profile: true
+layout: page
+layout: post
 ---
 
 **Welcome to my personal homepage!**

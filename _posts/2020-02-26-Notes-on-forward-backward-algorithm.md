@@ -1,7 +1,6 @@
 ---
-layout: single
-classes: wide
-author_profile: false
+layout: page
+author_profile: true
 ---
 
 <script type="text/javascript" async 
