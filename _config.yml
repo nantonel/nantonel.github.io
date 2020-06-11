@@ -9,11 +9,7 @@ url                      : "https://nantonel.github.io/"
 mathjax: true
 
 # Analytics
-analytics:
-  provider               : "google-gtag" # false (default), "google", "google-universal", "custom"
-  google:
-    tracking_id          : "UA-125824608-1"
-    anonymize_ip         : false # true, false (default)
+google_analytics: "UA-125824608-1"
 
 # Front Matter Defaults
 defaults:
