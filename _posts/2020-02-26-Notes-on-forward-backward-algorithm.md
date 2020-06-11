@@ -1,6 +1,9 @@
 ---
 layout: page
-author_profile: true
+tags:
+  - Speech Recognition
+  - Hidden Markov Models
+  - Julia lang
 ---
 
 <script type="text/javascript" async 
