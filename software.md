@@ -16,7 +16,7 @@ layout: post
 
 
 * **Audio**
-    * [RIM](https://github.com/nantonel/RIM.jl) - 
+    * [ImageMethodReverb](https://github.com/nantonel/ImageMethodReverb.jl) - 
       Julia Package for Room Acoustics Impulse Response Generator using the Randomized Image Method (RIM)
 
 Check also my [Github profile](https://github.com/nantonel) 
