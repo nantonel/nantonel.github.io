@@ -7,18 +7,18 @@ tags:
 ---
 
 Autoencoders are interesting mathematical objects that have many applications. 
-These consist of two mappings, an _encoder_ $$E$$ which maps data to a vector, often named _embedding_ or _code_, and a _decoder_ $$D$$ which maps the embedding back to the data. 
+These consist of two mappings, an _encoder_ $$E$$ which maps data to a vector, often named _embedding_, _code_ or _latent variables_, and a _decoder_ $$D$$ which maps the embedding back to the data. 
 The optimization problem that we need to solve to obtain these mappings is the following:
 
 $$
 \text{minimize}_{\mathcal{D},\mathcal{E}} \ \  \tfrac{1}{2} \|  \mathbf{X} - D( E( \mathbf{X} ) ) \|_F^2,
 $$
 
-where $$ \mathbf{X} $$ is a matrix containing the data and
+where $$ \mathbf{X} $$ is a matrix containing the centered data and
 $$\mathcal{D}$$ and $$\mathcal{E}$$ are the set of parameters of the mappings $$D$$ and $$E$$, respectively. 
 
 In practice, autoencoders are about learning the _identity mapping_, and what makes them interesting is that their training does not require any label.
-This means there is the possibility of learning data-driven mappings in an _unsupervised way_ and compact representations of the data by encoding embeddings. 
+This means there is the possibility of learning data-driven mappings in an _unsupervised way_ and compact representations of the data by encoding meaningful latent variables. 
 
 Very often you read autoencoders are related to the _singular value decomposition (SVD)_ and _principal component analysis_ (for example in [Wikipedia](https://en.wikipedia.org/wiki/Autoencoder)).
 These procedures have indeed many analogies, and in the trivial case of _linear autoencoders_ they really touch.
@@ -64,3 +64,4 @@ If $$ \mathbf{X} $$ has rank $$n$$ only the first $$n$$ columns of $$\mathbf{U}$
 #### References
 
 Baldi, Pierre. "Autoencoders, unsupervised learning, and deep architectures." Proceedings of ICML workshop on unsupervised and transfer learning. 2012.
+Theodoridis, Sergios. Machine learning: a Bayesian and optimization perspective. (Chapter 19) Academic press, 2015.
