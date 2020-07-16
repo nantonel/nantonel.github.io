@@ -60,3 +60,7 @@ The constraint we previously ignored can now come back in the scene,
 the analytical solution of the linear autoencoder is $$ \mathbf{D}^\star = \mathbf{U} $$
 and $$ \mathbf{E}^\star = \mathbf{U}^T $$.
 If $$ \mathbf{X} $$ has rank $$n$$ only the first $$n$$ columns of $$\mathbf{U}$$ are needed.
+
+#### References
+
+Baldi, Pierre. "Autoencoders, unsupervised learning, and deep architectures." Proceedings of ICML workshop on unsupervised and transfer learning. 2012.
