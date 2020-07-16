@@ -63,5 +63,5 @@ If $$ \mathbf{X} $$ has rank $$n$$ only the first $$n$$ columns of $$\mathbf{U}$
 
 #### References
 
-Baldi, Pierre. "Autoencoders, unsupervised learning, and deep architectures." Proceedings of ICML workshop on unsupervised and transfer learning. 2012.
-Theodoridis, Sergios. Machine learning: a Bayesian and optimization perspective. (Chapter 19) Academic press, 2015.
+* Baldi, Pierre. "Autoencoders, unsupervised learning, and deep architectures." Proceedings of ICML workshop on unsupervised and transfer learning. 2012.
+* Theodoridis, Sergios. Machine learning: a Bayesian and optimization perspective. (Chapter 19) Academic press, 2015.
