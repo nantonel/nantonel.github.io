@@ -7,7 +7,7 @@ layout: post
 * **Journal Papers**
 
   * N. Antonello, Philip N. Garner,
-    "[A t-distribution based operator for enhancing out of distribution robustness of neural network classifiers](https://arxiv.org/abs/2006.05389)", IEEE Signal Processing Letters, 2020, to appear. [code](https://github.com/idiap/tsoftmax)
+    "[A t-distribution based operator for enhancing out of distribution robustness of neural network classifiers](https://arxiv.org/abs/2006.05389)", IEEE Signal Processing Letters, vol. 27, pp.1070-1074, 2020. [code](https://github.com/idiap/tsoftmax)
 
   * N. Antonello, E. De Sena, M. Moonen, P. A. Naylor and T. van Waterschoot,
     "[Joint acoustic localization and dereverberation through plane wave decomposition and sparse regularization](ftp://ftp.esat.kuleuven.be/SISTA/nantonel/18-83.pdf)", IEEE/ACM Transactions of Audio, Speech Language Processing, vol. 27, no. 12, pp. 1893-1905, Dec. 2019. [[audio samples]](/adelfi/)
