@@ -111,8 +111,12 @@ s_all = collect(multiset_permutations([1;2],[5;5],5))
 Pλ_s = zeros(length(s_all)) 
 for z = 1:length(s_all)
     Pλ_s[z] = a[1] # initial distribution, since they are equal so we don't need to do this twice
-    for t = 2:Nt
-        Pλ_s[z] *= A[ s_all[z][t-1], s_all[z][t] ]
+    for t = 1:Nt
+        if t == 1
+            Pλ_s[z] = a[ s_all[z][t] ]
+        else
+            Pλ_s[z] *= A[ s_all[z][t-1], s_all[z][t] ]
+        end
     end
 end
 @assert sum(Pλ_s) ≈ 1 # check it's a probability 
