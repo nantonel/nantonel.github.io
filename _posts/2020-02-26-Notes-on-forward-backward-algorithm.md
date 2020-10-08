@@ -110,7 +110,6 @@ s_all = collect(multiset_permutations([1;2],[5;5],5))
 # Probability of sequence of states
 Pλ_s = zeros(length(s_all)) 
 for z = 1:length(s_all)
-    Pλ_s[z] = a[1] # initial distribution, since they are equal so we don't need to do this twice
     for t = 1:Nt
         if t == 1
             Pλ_s[z] = a[ s_all[z][t] ]
