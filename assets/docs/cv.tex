@@ -416,16 +416,17 @@ pdfborder={0 0 0}}
 
 \textcolor{softcol}{\hrule}
 %
-\cvevent{April 2019 - Present}{Postdoc}{Idiap Research Institute (CH)}{Supervisor: \href{https://pgarner.github.io}{Philip N. Garner}}
-{The postdoc is part of the
-\href{https://www.idiap.ch/en/scientific-research/projects/SHAPED}{
-SHAPED
-(speech hybrid analytics platform for consumer and enterprise devices) project}.
+\cvevent{April 2019 - Present}{Postdoc}{Idiap Research Institute (CH)}{Supervisors: \href{https://pgarner.github.io}{Philip N. Garner}, \href{https://people.idiap.ch/bourlard}{Herv\'e Bourlard}}
+{
+Focusing on out-of-distribution in Neural Networks
+(\href{https://www.idiap.ch/en/scientific-research/projects/SHAPED}{SHAPED} 
+in collaboration with Logitech).
+Research on automatic speech Recognition (ASR) acoustic model training exploiting sparsity 
+(\href{https://www.idiap.ch/en/scientific-research/projects/SHISSM}{SHISSM}).
 }
 
 \cvevent{September 2018 - April 2019}{Postdoc}{KU Leuven (BE)}{Supervisor: \href{http://homes.esat.kuleuven.be/~tvanwate/}{Toon van Waterschoot}}
-{The postdoc is part of the
-\href{https://erc.europa.eu/}{European Research Council}
+{Continuing PhD research on dereverberation \& speech enhancement  
 under the
 \href{https://ec.europa.eu/programmes/horizon2020/}{
 European Union’s Horizon 2020}
@@ -436,8 +437,7 @@ research and innovation program
 \cvevent{May 2013-August 2018}{PhD}{KU Leuven (BE)}{Supervisor: \href{http://homes.esat.kuleuven.be/~tvanwate/}{Toon van Waterschoot}~-~Co-supervisors: \href{http://www.esat.kuleuven.be/stadius/person.php?id=2}{Marc Moonen},
 \href{http://www.ee.ic.ac.uk/naylor/}{Patrick A. Naylor}
 }
-{The PhD is part of the \href{http://www.dreams-itn.eu/}{DREAMS Initial Training Network (ITN)} FP7-PEOPLE Marie Curie ITN consortium.
-The research focuses on developing algorithms for solving {\em inverse problems} for {\em dereverberation} and {\em room identification} using {\em numerical room acoustics models} and {\em compressed sensing}.
+{The research focuseed on developing algorithms for solving {\em inverse problems} for {\em dereverberation} and {\em room identification} using {\em numerical room acoustics models} and {\em compressed sensing} (\href{http://www.dreams-itn.eu/}{DREAMS Initial Training Network (ITN)} FP7-PEOPLE Marie Curie ITN consortium).
 }
 
 \textcolor{softcol}{\hrule}
@@ -576,12 +576,28 @@ N. Antonello, F. T. Agerkvist, ``Compensation of the Flux Modulation Distortion 
 
 
 	\begin{tabular*}{1\textwidth}{p{0.3cm} p{16.4cm}}
+
+&		 \larrow{bgcol}
+{\bf HMMGradients.jl}
+Enables computing the gradient of the parameters of Hidden Markov Models (HMMs). \hfill
+
+\href{https://github.com/idiap/HMMGradients.jl}{https://github.com/idiap/HMMGradients.jl}
+\\[3pt]
+
+&		 \larrow{bgcol}
+{\bf tsoftmax}
+Reproducible code for the paper ``A t-distribution based operator for enhancing out of distribution robustness of neural network classifiers'' (pytorch)\hfill
+
+\href{https://github.com/idiap/tsoftmax}{https://github.com/idiap/tsoftmax}
+\\[3pt]
+
 &		 \larrow{bgcol}
 {\bf StructuredOptimization.jl}
 Structured optimization in Julia. \hfill
 
 \href{https://github.com/kul-forbes/StructuredOptimization.jl}{https://github.com/kul-forbes/StructuredOptimization.jl}
 \\[3pt]
+
 &		 \larrow{bgcol}
 {\bf AbstractOperators.jl}
 Abstract operators for large scale optimization in Julia. \hfill
@@ -620,7 +636,7 @@ Julia package for generating room acoustics impulse responses using the Randomiz
 {\bf Programming Languages: }{\em Proficient}: Julia, Python, MATLAB. {\em Familiar}: C, C++
 }
 {
-{\bf Libraries: }{pytorch, kaldi}~{\bf Others: }{git, bash, \LaTeX, CI \& CD (Travis,Codecov,...), Linux, SGE, vim}
+{\bf Libraries: }{pytorch, kaldi}~{\bf Others: }{git, bash, \LaTeX, CI \& CD, Linux, SGE, vim}
 }
 
 \textcolor{softcol}{\hrule}
