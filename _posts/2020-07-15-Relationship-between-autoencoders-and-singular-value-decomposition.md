@@ -6,6 +6,12 @@ tags:
   - Machine learning
 ---
 
+<script type="text/javascript" async 
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+<style type="text/css"> 
+audio {width: 100px;}
+</style>
 Autoencoders are interesting mathematical objects that have many applications. 
 These consist of two mappings, an _encoder_ $$E$$ which maps data to a vector, often named _embedding_, _code_ or _latent variables_, and a _decoder_ $$D$$ which maps the embedding back to the data. 
 The optimization problem that we need to solve to obtain these mappings is the following:
