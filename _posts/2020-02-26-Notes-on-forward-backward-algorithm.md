@@ -18,7 +18,7 @@ Some basic understanding of HMMs is probably needed before reading this text. Re
 
 Here some code snippets are shown. They are written in the Julia language and should be very readable, as simple as pseudo-code.
 
-For further insights see documentation of [HMMGradients.jl](https://idiap.github.io/HMMGradients.jl/).
+For further insights see documentation of [HMMGradients.jl](https://idiap.github.io/HMMGradients.jl/stable/).
 
 ## Hidden Markov model notation
 
