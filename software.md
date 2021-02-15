@@ -4,6 +4,8 @@ type: page
 layout: post
 ---
 
+* [FiniteStateTransducers.jl](https://github.com/idiap/FiniteStateTransducers.jl) 
+  Play with Weighted Finite State Transducers (WFST) in the Julia language.
 * [HMMGradietns.jl](https://github.com/idiap/HMMGradients.jl) 
   Enables computing the gradient of the parameters of Hidden Markov Models (HMMs)
 * [tsoftmax](https://github.com/idiap/tsoftmax) 
