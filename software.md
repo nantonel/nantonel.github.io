@@ -4,6 +4,8 @@ type: page
 layout: post
 ---
 
+* [TIDIGITSRecipe.jl](https://github.com/idiap/TIDIGITSRecipe.jl) 
+  A Julia recipe for training an ASR system using the TIDIGITS database.
 * [FiniteStateTransducers.jl](https://github.com/idiap/FiniteStateTransducers.jl) 
   Play with Weighted Finite State Transducers (WFST) in the Julia language.
 * [HMMGradietns.jl](https://github.com/idiap/HMMGradients.jl) 
