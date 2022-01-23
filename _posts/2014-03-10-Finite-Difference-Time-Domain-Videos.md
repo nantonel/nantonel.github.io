@@ -7,4 +7,4 @@ tags:
 ---
 
 Finite difference time domain simulations
-{% include responsive-embed url="https://www.youtube-nocookie.com/embed/rbRbrAuLO6w?list=PL1IBft9eGEhxlCFExNRrsczsWjP70NiGR?controls=0&amp;" %}
+{% include responsive-embed url="https://www.youtube.com/watch?v=rbRbrAuLO6w&list=PL1IBft9eGEhxlCFExNRrsczsWjP70NiGR&index=1" %}
