@@ -15,4 +15,4 @@ I obtained my PhD at [KU Leuven](http://www.kuleuven.be) within the [Marie Skło
 "_Dereverberation and Reverberation of Audio, Music and Speech_
 ([DREAMS](http://www.dreams-itn.eu/))". I was a postdoc at the [Idiap research institute](https://www.idiap.ch/en).
 
-Currently I am an applied scientist at Amazon.
+Currently I am an Applied Scientist at Amazon.
