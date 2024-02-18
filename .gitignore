@@ -22,3 +22,5 @@ npm-debug.log*
 *.fls
 *.fdb_latexmk
 *.swp
+*.bcf
+*.xml
