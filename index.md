@@ -7,4 +7,4 @@ layout: post
 
 You can find a little bit of all my professional interests using the tabs above.
 
-Hope you enjoy that and feel free to reach out for any question!
+Cheers, reach out if you have any question!
